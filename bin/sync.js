@@ -23,12 +23,13 @@ var sincronizarSaude = function () {
         { $setOnInsert: i },
         { upsert: true }
       ).then((res) => {
-        if (res.ok !== 1) throw 'Erro ao sincronizar os dados de saúde!'
+        if (res.ok !== 1) throw new Error('Erro ao sincronizar os dados de saúde!')
       })
     }
   })
 
   Saude.count().exec((err, count) => {
+    if (err) throw err
     console.log(count)
   })
 }
