@@ -7,3 +7,7 @@
   background-image: linear-gradient(45deg, #001F3F, #39CCCC);
   color: #FFFFFF;
 }
+canvas {
+  width: 100%;
+  height: 400px;
+}
