@@ -1,78 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
-    <link rel="shortcut icon" href="http://hackathon.ima.sp.gov.br/api-portal/sites/default/files/icon-novo.ico"
-          type="image/vnd.microsoft.icon">
-    <title>Portal Saúde Campinas</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+
+  <link rel="shortcut icon" href="http://hackathon.ima.sp.gov.br/api-portal/sites/default/files/icon-novo.ico"
+  type="image/vnd.microsoft.icon">
+
+  <title>Portal Saúde Campinas</title>
 </head>
-<!-- Inicialização do app -->
 <body ng-app="HackathonApp">
 
-<!-- Atribui o controller da página inicial -->
-<div class="container" ng-controller="HomeCtrl as vm">
+  <!-- Atribui o controller da página inicial -->
+  <div class="container" ng-controller="HomeCtrl as vm">
     <h1>Busca de Unidades de Atendimento</h1>
 
     <div class="form-group">
-        <label>Região: </label>
-        <select ng-model="regiaoSelecionada" ng-change="vm.carregarUnidades(regiaoSelecionada)" class="bootstrap-select btn btn-default">
-            <!-- Lista as regiões disponíveis -->
-            <option></option>
-            <option ng-repeat="i in vm.regioes" ng-bind="i.descricao" ng-value="i.id"></option>
-        </select>
+      <label>Região: </label>
+      <select ng-model="regiaoSelecionada" ng-change="vm.carregarUnidades(regiaoSelecionada)" class="bootstrap-select btn btn-default">
+        <!-- Lista as regiões disponíveis -->
+        <option></option>
+        <option ng-repeat="i in vm.regioes" ng-bind="i.descricao" ng-value="i.id"></option>
+      </select>
     </div>
 
     <div id="divTableUnidades" class="panel panel-default">
-        <div class="panel-heading tituloPainel">Unidades de Atendimento</div>
-        <table id="tableUnidades" class="table">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Unidade</th>
-                <th>Melhor horário</th>
-                <th>Enredeço</th>
-            </tr>
-            </thead>
-            <tbody>
-                <tr ng-if="!regiaoSelecionada">
-                    <td colspan="100" class="text-center">
-                        Selecione a região acima!
-                    </td>
-                </tr>
-                <tr ng-if="regiaoSelecionada && vm.unidades.length === 0">
-                    <td colspan="100" class="text-center">
-                        Nenhuma unidade encontrada!
-                    </td>
-                </tr>
-                <tr ng-repeat="i in vm.unidades">
-                    <td scope="row"><input type="checkbox" aria-label="..."></td>
-                    <td ng-bind="i.nome"></td>
-                    <td ng-bind="i.melhorHorario"></td>
-                    <td ng-bind="i.endereco"></td>
-                </tr>
-            </tbody>
-        </table>
+      <div class="panel-heading tituloPainel">Unidades de Atendimento</div>
+      <table id="tableUnidades" class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Unidade</th>
+            <th>Melhor horário</th>
+            <th>Enredeço</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-if="!regiaoSelecionada">
+            <td colspan="100" class="text-center">
+              Selecione a região acima!
+            </td>
+          </tr>
+          <tr ng-if="regiaoSelecionada && vm.unidades.length === 0">
+            <td colspan="100" class="text-center">
+              Nenhuma unidade encontrada!
+            </td>
+          </tr>
+          <tr ng-repeat="i in vm.unidades">
+            <td scope="row"><input type="checkbox" aria-label="..."></td>
+            <td ng-bind="i.nome"></td>
+            <td ng-bind="i.melhorHorario"></td>
+            <td ng-bind="i.endereco"></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-</div>
+  </div>
 
-<!-- Latest compiled JavaScript -->
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-<!-- Bundle contendo o Angular e o app -->
-<script src="../../js/bundle.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+  <!-- Bundle contendo o Angular e o app -->
+  <script src="../../js/bundle.js"></script>
 
 </body>
-
 </html>
