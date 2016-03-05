@@ -1,0 +1,22 @@
+{
+  "name": "hackathon-cps",
+  "version": "1.0.0",
+  "description": "Projeto implementado na Hackathon Campinas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fmoliveira/hackathon-cps.git"
+  },
+  "keywords": [
+    "hackathon",
+    "campinas"
+  ],
+  "author": "Filipe Oliveira, Roberto Cândido, Thiago Fernandes",
+  "bugs": {
+    "url": "https://github.com/fmoliveira/hackathon-cps/issues"
+  },
+  "homepage": "https://github.com/fmoliveira/hackathon-cps#readme"
+}
