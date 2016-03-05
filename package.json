@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "browserify frontend/app/app.js > frontend/js/bundle.js",
-    "test": "standard frontend/app/**/*.js",
+    "test": "standard",
     "watch": "watchify frontend/app/app.js -o frontend/js/bundle.js"
   },
   "repository": {
@@ -34,5 +34,10 @@
     "standard": "^6.0.7",
     "surge": "^0.17.7",
     "watchify": "^3.7.0"
+  },
+  "standard": {
+    "ignore": [
+      "frontend/js/"
+    ]
   }
 }
