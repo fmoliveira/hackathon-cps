@@ -31,11 +31,11 @@ require('angular')
 angular.module('HackathonApp')
 
 /* Define o controller da tela inicial */
-.controller('HomeCtrl', function (ListaRegioes, ListaEspecialidades) {
+.controller('HomeCtrl', function (Regioes, ListaEspecialidades) {
   var self = this
 
   /* Carrega as listas de regiões e especialidades */
-  self.regioes = ListaRegioes
+  self.regioes = Regioes.listarRegioes()
   self.especialidades = ListaEspecialidades
 })
 
@@ -76,16 +76,21 @@ require('angular')
 angular.module('HackathonApp')
 
 /* Define o serviço para retornar a lista de regiões */
-.factory('ListaRegioes', function () {
-  var model = []
+.factory('Regioes', function () {
+  var service = {}
 
   /* Dados mock */
-  model.push({ id: 1, descricao: 'Norte' })
-  model.push({ id: 2, descricao: 'Sul' })
-  model.push({ id: 3, descricao: 'Leste' })
-  model.push({ id: 4, descricao: 'Oeste' })
+  service.listarRegioes = function () {
+    var model = [
+      { id: 1, descricao: 'Norte' },
+      { id: 2, descricao: 'Sul' },
+      { id: 3, descricao: 'Leste' },
+      { id: 4, descricao: 'Oeste' }
+    ]
+    return model
+  }
 
-  return model
+  return service
 })
 
 },{"angular":8}],5:[function(require,module,exports){
