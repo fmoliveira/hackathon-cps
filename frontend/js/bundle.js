@@ -14,11 +14,12 @@ var app = angular.module('HackathonApp', [
 
 /* Carrega os seviços para acesso a dados */
 require('./services/regioes')
+require('./services/unidades')
 
 /* Carrega os controllers */
 require('./controllers/home')
 
-},{"./controllers/home":2,"./services/regioes":3,"angular":7,"angular-route":5}],2:[function(require,module,exports){
+},{"./controllers/home":2,"./services/regioes":3,"./services/unidades":4,"angular":8,"angular-route":6}],2:[function(require,module,exports){
 /* global angular */
 
 'use strict'
@@ -30,14 +31,18 @@ require('angular')
 angular.module('HackathonApp')
 
 /* Define o controller da tela inicial */
-.controller('HomeCtrl', function (ListaRegioes) {
+.controller('HomeCtrl', function (ListaRegioes, ListaUnidades) {
   var self = this
 
   /* Carrega a lista de regiões */
   self.regioes = ListaRegioes
+
+  /* Carrega a lista de unidades */
+  self.unidades = ListaUnidades
+
 })
 
-},{"angular":7}],3:[function(require,module,exports){
+},{"angular":8}],3:[function(require,module,exports){
 /* global angular */
 
 'use strict'
@@ -61,7 +66,31 @@ angular.module('HackathonApp')
   return regioes
 })
 
-},{"angular":7}],4:[function(require,module,exports){
+},{"angular":8}],4:[function(require,module,exports){
+/* global angular */
+
+'use strict'
+
+/* Biblioteca do Angular */
+require('angular')
+
+/* Carrega o app Angular */
+angular.module('HackathonApp')
+
+/* Define o serviço para retornar a lista de unidades */
+.factory('ListaUnidades', function(){
+  var unidades = []
+
+  /* Dados mock */
+  unidades.push({id: 1, nome: 'CENTRO DE REABILITACAO FISICA', endereco: 'Endereço 1', melhorHorario: '12h'})
+  unidades.push({id: 2, nome: 'CENTRO DE SAUDE BOA VISTA', endereco: 'Endereço 2', melhorHorario: '13h'})
+  unidades.push({id: 3, nome: 'CENTRO DE SAUDE BARAO GERALDO', endereco: 'Endereço 3', melhorHorario: '14h'})
+  unidades.push({id: 4, nome: 'CENTRO DE SAUDE BOA ESPERANCA', endereco: 'Endereço 4', melhorHorario: '15h'})
+
+  return unidades
+})
+
+},{"angular":8}],5:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.0
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -1079,11 +1108,11 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 require('./angular-route');
 module.exports = 'ngRoute';
 
-},{"./angular-route":4}],6:[function(require,module,exports){
+},{"./angular-route":5}],7:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.0
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -31512,8 +31541,8 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":6}]},{},[1]);
+},{"./angular":7}]},{},[1]);

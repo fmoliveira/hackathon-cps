@@ -13,10 +13,10 @@
 
   <!-- Atribui o controller da página inicial -->
   <div ng-controller="HomeCtrl as vm">
-    <ul>
+    <select ng-model="vm.regiaoSelecionada">
       <!-- Lista as regiões disponíveis -->
-      <li ng-repeat="i in vm.regioes" ng-bind="i.descricao"></li>
-    </ul>
+      <option ng-repeat="i in vm.regioes" ng-bind="i.descricao" ng-value="i.id"></option>
+    </select>
   </div>
 
   <!-- Bundle contendo o Angular e o app -->
