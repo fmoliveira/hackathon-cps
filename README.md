@@ -2,7 +2,7 @@
 
 [![Travis Build][travis-image]][travis-url]
 
-Projeto implementado na Hackathon Campinas.
+Projeto desenvolvido na Hackathon Campinas.
 
 # Guidelines
 * Todo código JavaScript é validado pelo linter [Standard](http://standardjs.com/) para manter padronização e qualidade de código.
