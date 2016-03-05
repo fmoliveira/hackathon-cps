@@ -17,6 +17,7 @@
     "campinas"
   ],
   "author": "Filipe Oliveira, Roberto Cândido, Thiago Fernandes",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/fmoliveira/hackathon-cps/issues"
   },
