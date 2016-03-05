@@ -1,10 +1,6 @@
 language: node_js
 node_js:
 - '4.3'
-before_deploy:
-- npm run build
-- git add -f public/js/bundle.js
-- git commit -m "Building app for production."
 deploy:
   provider: heroku
   app: saudecampinas
