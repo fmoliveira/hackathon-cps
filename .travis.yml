@@ -1,6 +1,10 @@
 language: node_js
 node_js:
-  - "4.3"
+- '4.3'
 after_success:
 - npm run build
-- surge --project ./frontend/ --domain saudecampinas.surge.sh
+deploy:
+  provider: heroku
+  app: saudecampinas
+  api_key:
+    secure: iLqIgAXCSEiZqKw6zPnVy3zOz8D2hCmwiX2nH8e+wNThLyknducEbqEAfl4doxTGk/kArJQdZDsUHTCDtsJm3PDRSsLQMcljCyh5c9zc/6hUYO0PRl22ShAM8OXktEV6OSSTwvs/tuP2OyCr12yQiZUnpk2m3spm51SJozMnxhKrmYi0UQZ4Z7yq1SrdAahoVcNm5/Z6CkzjRFtb2nw/tz8J0l0AfUyD/JdNo/PG3dwoTv8bFFMiWLvhEXK8sus5eFV2c9hIrBZOc1X/Ys6QxRSQ3W+rsq9Sco0wMy8x/a5AhjhEPWLR0hZLsFz0i24WsPb6p2QtGkv92OlLc6ExCU2PGFrlqSGFjIGK70fGkp3SQlvprY/Z/2F321OIuelfnUjPmApJpTbIUKM51iNYWuPNl+oZggs+Liof4vFOs4MSSkByLKnu5jzUdazJ6+A5195IHPPQNY4LktE6HrbmuBxInmDC/0JRpLdVmY527yodBSDPHvD4IBC0UCYNqLKIUixZS8Ox0N8xogXDozYB7rHLW2pVubi70YEn/amgmgNhyZNNBMuHqElGuP5I0hMF+s1HE2D0ZtW89IBz0KT5KpdaoEE06JXWCx449GN/7yEHJ18PigYsXSv0h/zg29Sri9LIW9fDdyPcOUCR1sYukFeeHnfP6hc7WuA25Fko634=

@@ -7,7 +7,7 @@ require('angular')
 require('angular-route')
 
 /* Inicializa o app Angular */
-var app = angular.module('HackathonApp', [
+angular.module('HackathonApp', [
   'ngRoute'
 ])
 
