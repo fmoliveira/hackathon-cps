@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Exemplo de Regiões</title>
+</head>
+
+<!-- Inicialização do app -->
+<body ng-app="HackathonApp">
+
+  <!-- Atribui o controller da página inicial -->
+  <div ng-controller="HomeCtrl as vm">
+    <ul>
+      <!-- Lista as especialidades disponíveis -->
+      <li ng-repeat="i in vm.especialidades" ng-bind="i.descricao"></li>
+    </ul>
+  </div>
+
+  <!-- Bundle contendo o Angular e o app -->
+  <script src="../../js/bundle.js"></script>
+
+</body>
+</html>
