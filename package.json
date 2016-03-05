@@ -40,7 +40,7 @@
   },
   "standard": {
     "ignore": [
-      "frontend/js/"
+      "public/js/"
     ]
   }
 }
