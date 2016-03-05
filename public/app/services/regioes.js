@@ -9,19 +9,11 @@ require('angular')
 angular.module('HackathonApp')
 
 /* Define o serviço para retornar a lista de regiões */
-.factory('Regioes', function () {
+.factory('Regioes', function ($http) {
   var service = {}
 
-  var mock = [
-    { descricao: 'Norte' },
-    { descricao: 'Sul' },
-    { descricao: 'Leste' },
-    { descricao: 'Oeste' }
-  ]
-
-  /* Dados mock */
   service.listarRegioes = function () {
-    return mock
+    return $http.get('/api/regioes');
   }
 
   return service

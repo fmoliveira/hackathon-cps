@@ -18,9 +18,13 @@ angular.module('HackathonApp')
 
   /* Inicializa a lista de unidades como vazia */
   self.unidades = []
+  self.regioes = []
 
   /* Carrega as listas de regiões e especialidades */
-  self.regioes = Regioes.listarRegioes()
+  Regioes.listarRegioes().then(function (res) {
+    self.regioes = res.data
+  })
+
   self.especialidades = Especialidades.listarEspecialidades()
 
   self.atualizarUnidade = function(regioes){
