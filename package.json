@@ -4,7 +4,9 @@
   "description": "Projeto implementado na Hackathon Campinas.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "browserify frontend/app/app.js > frontend/js/bundle.js",
+    "test": "standard",
+    "watch": "watchify frontend/app/app.js -o frontend/js/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/fmoliveira/hackathon-cps/issues"
   },
-  "homepage": "https://github.com/fmoliveira/hackathon-cps#readme"
+  "homepage": "https://github.com/fmoliveira/hackathon-cps#readme",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-route": "^1.5.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "standard": "^6.0.7",
+    "watchify": "^3.7.0"
+  }
 }
