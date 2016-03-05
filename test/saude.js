@@ -6,7 +6,7 @@ const saude = require('../lib/saude')
 'use strict'
 
 describe('API de Saúde', function () {
-  it('Deve retornar uma lista de atendimentos', function (done) {
+  it('Deve retornar um array de atendimentos', function (done) {
     saude.listarAtendimentos().then((data) => {
       expect(data).to.be.ok()
       expect(data).to.be.an('array')
