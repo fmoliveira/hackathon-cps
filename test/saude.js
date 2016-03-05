@@ -13,4 +13,15 @@ describe('API de Saúde', function () {
       done()
     })
   })
+
+  it('Deve retornar a quantidade solicitada de atendimentos', function (done) {
+    const qtde = 15
+
+    saude.listarAtendimentos(0, qtde).then((data) => {
+      expect(data).to.be.ok()
+      expect(data).to.be.an('array')
+      expect(data.length).to.be(qtde)
+      done()
+    })
+  })
 })
