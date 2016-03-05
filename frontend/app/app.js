@@ -4,11 +4,13 @@
 require('angular')
 require('angular-route')
 
-/* Módulos de acesso a dados */
-require('./services/regioes')
-
 /* Inicializa o app Angular */
 var app = angular.module('HackathonApp', [
-  'angular-route',
-  'HackathonApp.Regioes'
-]);
+  'ngRoute'
+])
+
+/* Carrega os seviços para acesso a dados */
+require('./services/regioes')
+
+/* Carrega os controllers */
+require('./controllers/home')

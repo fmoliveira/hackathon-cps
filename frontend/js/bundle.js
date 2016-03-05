@@ -5,22 +5,44 @@
 require('angular')
 require('angular-route')
 
-/* Módulos de acesso a dados */
-require('./services/regioes')
-
 /* Inicializa o app Angular */
 var app = angular.module('HackathonApp', [
-  'angular-route',
-  'HackathonApp.Regioes'
-]);
+  'ngRoute'
+])
 
-},{"./services/regioes":2,"angular":6,"angular-route":4}],2:[function(require,module,exports){
+/* Carrega os seviços para acesso a dados */
+require('./services/regioes')
+
+/* Carrega os controllers */
+require('./controllers/home')
+
+},{"./controllers/home":2,"./services/regioes":3,"angular":7,"angular-route":5}],2:[function(require,module,exports){
 'use strict'
 
+/* Biblioteca do Angular */
 require('angular')
 
-var app = angular.module('HackathonApp.Regioes', [])
+/* Carrega o app Angular */
+angular.module('HackathonApp')
 
+/* Define o controller da tela inicial */
+.controller('HomeCtrl', function (ListaRegioes) {
+  var self = this
+
+  /* Carrega a lista de regiões */
+  self.regioes = ListaRegioes
+})
+
+},{"angular":7}],3:[function(require,module,exports){
+'use strict'
+
+/* Biblioteca do Angular */
+require('angular')
+
+/* Carrega o app Angular */
+angular.module('HackathonApp')
+
+/* Define o serviço para retornar a lista de regiões */
 .factory('ListaRegioes', function () {
   var regioes = []
 
@@ -33,7 +55,7 @@ var app = angular.module('HackathonApp.Regioes', [])
   return regioes
 })
 
-},{"angular":6}],3:[function(require,module,exports){
+},{"angular":7}],4:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.0
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -1051,11 +1073,11 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 require('./angular-route');
 module.exports = 'ngRoute';
 
-},{"./angular-route":3}],5:[function(require,module,exports){
+},{"./angular-route":4}],6:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.0
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -31484,8 +31506,8 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":5}]},{},[1]);
+},{"./angular":6}]},{},[1]);

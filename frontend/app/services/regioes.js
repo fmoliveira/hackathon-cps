@@ -1,9 +1,12 @@
 'use strict'
 
+/* Biblioteca do Angular */
 require('angular')
 
-var app = angular.module('HackathonApp.Regioes', [])
+/* Carrega o app Angular */
+angular.module('HackathonApp')
 
+/* Define o serviço para retornar a lista de regiões */
 .factory('ListaRegioes', function () {
   var regioes = []
 
