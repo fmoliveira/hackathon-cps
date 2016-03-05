@@ -3,6 +3,8 @@ node_js:
 - '4.3'
 after_success:
 - npm run build
+- git add .
+- git commit -m "Building app for production."
 deploy:
   provider: heroku
   app: saudecampinas
