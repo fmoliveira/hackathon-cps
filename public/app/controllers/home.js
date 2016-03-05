@@ -25,6 +25,7 @@ angular.module('HackathonApp')
     self.unidades = Unidades.listarUnidades(regiao)
   }
 
+  var options = {responsive: true}
   var ctx = document.getElementById('myChart').getContext('2d')
-  new Chart(ctx).Line(Unidades.chartUnidade())
+  var lineChart = new Chart(ctx).Line(Unidades.chartUnidade(), options)
 })
