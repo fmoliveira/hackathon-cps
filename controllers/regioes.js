@@ -1,15 +1,15 @@
 'use strict'
 
 const express = require('express')
-const Regiao = require('../models/regiao')
+const Saude = require('../models/saude')
 
 var router = express.Router()
 
 router.get('/', (req, res) => {
-  Regiao.find((err, jobs) => {
+  Saude.distinct('distritoAtendimento').exec((err, regioes) => {
     if (err) res.send(err)
 
-    res.json(jobs)
+    res.json(regioes)
   })
 })
 
