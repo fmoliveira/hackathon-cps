@@ -4,10 +4,10 @@
   "description": "Projeto desenvolvido na Hackathon Campinas.",
   "main": "index.js",
   "scripts": {
-    "build": "browserify frontend/app/app.js > frontend/js/bundle.js",
+    "build": "browserify public/app/app.js > public/js/bundle.js",
     "test": "standard",
     "server": "node server.js",
-    "watch": "watchify frontend/app/app.js -o frontend/js/bundle.js"
+    "watch": "watchify public/app/app.js -o public/js/bundle.js"
   },
   "repository": {
     "type": "git",
