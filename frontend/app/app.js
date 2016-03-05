@@ -13,6 +13,7 @@ var app = angular.module('HackathonApp', [
 
 /* Carrega os seviços para acesso a dados */
 require('./services/regioes')
+require('./services/especialidades')
 
 /* Carrega os controllers */
 require('./controllers/home')
