@@ -6,4 +6,4 @@ var RegiaoSchema = new mongoose.Schema({
   descricao: String
 })
 
-module.exports = mongoose.model('Regiao', RegiaoSchema);
+module.exports = mongoose.model('Regiao', RegiaoSchema)
