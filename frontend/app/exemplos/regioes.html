@@ -15,9 +15,7 @@
   <div ng-controller="HomeCtrl as vm">
     <ul>
       <!-- Lista as regiões disponíveis -->
-      <li ng-repeat="i in vm.regioes">
-        {{ i.descricao }}
-      </li>
+      <li ng-repeat="i in vm.regioes" ng-bind="i.descricao"></li>
     </ul>
   </div>
 
