@@ -23,19 +23,14 @@ angular.module('HackathonApp')
   self.regioes = Regioes.listarRegioes()
   self.especialidades = Especialidades.listarEspecialidades()
 
-  self.atualizarUnidade = function(regioes){
+  self.atualizarUnidade = function (regioes) {
     self.unidades = []
-    console.log("Regioes: ", regioes);
-    var regioesSelecionadas = _.filter(regioes, function(n){
-      console.log("n: ", n);
+    var regioesSelecionadas = _.filter(regioes, function (n) {
       return n.selecionado
     })
-    console.log("Região Selecionada: ",regioesSelecionadas)
-    self.unidades.push()
-    // console.log("Região Selecionada: ",self.unidades)
-    // if(regioes.selecionado ){
-    //   self.unidades = Unidades.listarUnidades(regioes.descricao)
-    // }
+    angular.forEach(regioesSelecionadas, function (value, key) {
+      self.unidades = _.concat(self.unidades, Unidades.listarUnidades(value.descricao))
+    })
   }
 
   /* Carrega as unidades da região selecionada */
