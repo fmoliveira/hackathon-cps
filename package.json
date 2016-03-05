@@ -6,7 +6,7 @@
   "scripts": {
     "build": "browserify public/app/app.js > public/js/bundle.js",
     "test": "standard",
-    "server": "node server.js",
+    "start": "node server.js",
     "watch": "watchify public/app/app.js -o public/js/bundle.js"
   },
   "repository": {
@@ -26,6 +26,7 @@
   "dependencies": {
     "angular": "^1.5.0",
     "angular-route": "^1.5.0",
+    "chart.js": "^1.0.2",
     "express": "^4.13.4",
     "lodash": "^4.6.1",
     "mongoose": "^4.4.6",
