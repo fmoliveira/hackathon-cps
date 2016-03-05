@@ -1,13 +1,4 @@
 {
-  "nome": "",
-  "endereco": "",
-  "fone": "",
-  "email": "",
-  "horarioFuncionamento": "",
-  "vinculo": "",
-  "bairro": ""
-},
-{
   "nome": "Centro de Saúde Antonio da Costa Santos",
   "endereco": "Rua Doutor Silvino de Godoy nº 40 – Jardim Conceição – CEP 13091-020 – Campinas – SP",
   "fone": "(19) 3207-2888 / 3207-0601",
@@ -53,24 +44,24 @@
 "bairro": "Jardim Santa Mônica",
 },
 {
-"nome": "Centro de Saúde Integração",
-"endereco": "Rua Zocca, 161 - Vila Castelo Branco - CEP 13061-231 - Campinas/ SP",
-"fone": "(19)3229-9868 / 3268-1292",
-"email": "saude.csintegracao@campinas.sp.gov.br",
-"horarioFuncionamento": "Segunda à Sexta-feira das 07:00 às 21:00 horas",
-"bairro": "Vila Castelo Branco",
-"vinculo": "Distrito de Saúde Noroeste",
+  "nome": "Centro de Saúde Integração",
+  "endereco": "Rua Zocca, 161 - Vila Castelo Branco - CEP 13061-231 - Campinas/ SP",
+  "fone": "(19)3229-9868 / 3268-1292",
+  "email": "saude.csintegracao@campinas.sp.gov.br",
+  "horarioFuncionamento": "Segunda à Sexta-feira das 07:00 às 21:00 horas",
+  "bairro": "Vila Castelo Branco",
+  "vinculo": "Distrito de Saúde Noroeste",
 },
 {
-"nome": "Centro de Saúde União dos Bairros",
-"endereco": "Av. Pedro Degrecci Júnior, s/n - Vila Vitória - CEP: 13057-100",
-"fone":"(19) 3226-6300/ 3226-9519 / 3226-9856",
-"email": "saude.csuniaobairros@campinas.sp.gov.br",
-"horarioFuncionamento": "Segunda à Sexta-feira das 07:00 às 19:00 horas ; Sábado das 07:00 às 13:00 horas",
-"bairro": "Vila Vitória",
-"vinculo": "Distrito de Saúde Sudoeste",
+  "nome": "Centro de Saúde União dos Bairros",
+  "endereco": "Av. Pedro Degrecci Júnior, s/n - Vila Vitória - CEP: 13057-100",
+  "fone":"(19) 3226-6300/ 3226-9519 / 3226-9856",
+  "email": "saude.csuniaobairros@campinas.sp.gov.br",
+  "horarioFuncionamento": "Segunda à Sexta-feira das 07:00 às 19:00 horas ; Sábado das 07:00 às 13:00 horas",
+  "bairro": "Vila Vitória",
+  "vinculo": "Distrito de Saúde Sudoeste",
 },
-  {
+{
   "nome": "Centro de Saúde José Batista",
   "endereco": "Rua Vítor Meirelles, 275 - Jardim Samambaia - CEP 13046-545",
   "fone": "(19) 3279-2141 / (19) 3271-5828 (Coordenação)",
@@ -78,4 +69,122 @@
   "horarioFuncionamento": "Segunda à sexta-feira, das 7h às 21h",
   "bairro": "Jardim Samambaia",
   "vinculo": "Distrito de Saúde Sul",
+},
+{
+"nome": "Centro de Saúde Renato Paulo Henry"  ,
+"endereco": "Rua São Benedito, 50 - Campinas - SP",
+"fone":"(19) 3269-2904 / 3227-9380",
+"email": "saude.cssantalucia@campinas.sp.gov.br" ,
+"horarioFuncionamento": "Segunda à Sexta-feira das 07:00 às 20:00 horas ; Sábado das 07:00 às 17:00 horas",
+"bairro": "Jardim Santa Lúcia",
+"vinculo": "Distrito de Saúde Sudoeste"
+},
+{
+  "nome": "Centro de Saúde Jaime Cesar Correa Lima",
+  "endereco": "Rua Jerônimo Tognolo, 77 - Parque da Figueira - CEP 13040-245",
+  "fone": "(19) 3238-9484 / (19) 3277-1481 / (19) 3738-0436",
+  "email": "saude.cspqdafigueira@campinas.sp.gov.br",
+  "horarioFuncionamento": "Segunda à sexta-feira, das 7h às 21h",
+  "coletaExames": "Segunda, quarta e sexta-feira, as 7h",
+  "bairro": "Parque da Figueira",
+  "vinculo": "Distrito de Saúde Sul"
+},
+{
+  "nome": "Centro de Saúde Parque São Quirino",
+  "endereco": "Av.Diogo Alvares, 1450 - CEP 13088-221 - Campinas - SP",
+  "fones": "(19) 3256-7243 e 3296-3640",
+  "Email": "saude.cssaoquirino@campinas.sp.gov.br",
+  "horarioFuncionamento": "Segunda a Sexta das 07:00 às 21:00 horas ; Sábado das 07:00 às 13:00 horas",
+  "vinculo": "Distrito de Saúde Leste",
+  "bairro": "Vila Nogueira"
+},
+{
+  "nome":"Centro de Saúde Jardim Aeroporto",
+  "endereco": "Rua Cairi, 315 - CEP 13054-113 - Campinas - SP",
+  "fones":"(19) 3266-1725 / 3226-9000",
+  "email": "csjdaeroporto@gmail.com",
+  "horarioFuncionamento": "Segunda à Sexta-feira das 07:00 às 19:00 horas ; Sábado das 07:00 às 13:00 horas",
+  "vinculo": "Distrito de Saúde Sudoeste",
+  "bairro": "Vila Aeroporto"
+},
+{
+  "nome":"Centro de Saúde Dr. Osvaldo Serra Von Zuben",
+  "endereco": "Rua das Acácias, s/n - Vila Boa Vista - CEP 13064-797",
+  "Telefone": "(19) 3245-2662 / (19) 3245-1259",
+  "email": "saude.csvilaboavista@campinas.sp.gov.br",
+  "horarioFuncionamento": "Segunda à sexta-feira, das 7h às 19h",
+  "vinculo": "Distrito de Saúde Norte",
+  "bairro": "Vila Boa Vista"
+},
+{
+  "nome": "Centro de Saúde Tancredo Neves",
+  "endereco": "Av. Tancredo Neves, 5101 - CEP 13050-553 - Campinas - SP",
+  "fones":"(19) 3227-3811",
+  "email": "saude.cstancredoneves@campinas.sp.gov.br ",
+  "horarioFuncionamento": "Segunda à Sexta-feira das 07:00 às 19:00 horas  ",
+  "bairro": "Campos Elíseos",
+  "vinculo": "Distrito de Saúde Sudoeste"
+},
+{
+  "nome": "Centro de Saúde São José",
+  "endereco": "Avenida José Carlos do Amaral Galvão, 184 - Jardim São José - CEP 13051-160",
+  "Telefone": "(19) 3229-9867 / (19) 3229-0735 / (19) 3268-9547 (PABX)",
+  "email": "saude.cssaojose@campinas.sp.gov.br",
+  "horarioFuncionamento": "Segunda à sexta-feira, das 7h às 19h",
+  "vinculo": "Distrito de Saúde Sul",
+  "bairro": "Jardim São José"
+},
+{
+  "nome": "Centro de Saúde Dr. Paulo de Camargo Ferraz",
+  "endereco": "Rua Francisco Antônio da Silva, 365 - Vila Formosa - CEP 13045-025",
+  "Telefone": "(19) 3276-3975 / 3271-5977",
+  "email": "saude.csjdsaovicente@campinas.sp.gov.br",
+  "horarioFuncionamento": "Segunda à sexta-feira, das 7h às 19h",
+  "vinculo": "Distrito de Saúde Sul",
+  "bairro": "Jardim São Vicente"
+},
+{
+"nome": "Centro de Saúde Dr. Cláudio Luiz da Silva Braga",
+"endereco": "Av.Sinimbu, 903 - CEP 13053-000 - Campinas - SP",
+"fones":"(19) 3266-8009 / (19)3266-9873 / 3266-6928",
+"email": "saude.csvistaalegre@campinas.sp.gov.br ",
+"horarioFuncionamento": "Segunda à Sexta-feira das 07:00 às 19:00 horas ; Sábado das 07:00 às 13:00 horas",
+"vinculo": "Distrito de Saúde Sudoeste",
+"bairro": "Jardim Vista Alegre"
+},
+{
+  "nome": "Centro de Saúde Dr. Francisco José Monteiro Salles",
+  "endereco": "Rua Natale Bertucci, 20 - Parque Valença I - CEP 13058-525",
+  "fone": "(19) 3221-8545 / (19) 3261-2333 / (19) 3261-1800  ",
+  "email": "cspqvalenca@gmail.com",
+  "horarioFuncionamento": "Segunda à sexta-feira, das 7h às 22h ; Sábado, das 7h às 17h.",
+  "vinculo": "Distrito de Saúde Noroeste",
+  "bairro": "Parque Valença"
+},
+{
+  "nome":"Centro de Saúde Dr. Armando Rocha Brito Júnior",
+  "endereco": "Rua Pe. Eustáquio, 229 - CEP 13050-700 - Campinas - SP",
+  "fone":"(19) 3223-4533",
+  "email": "saude.csjdcapivari@campinas.sp.gov.br",
+  "horarioFuncionamento": "Segunda à Sexta-feira das 07:00 às 19:00 horas ; Sábado das 07:00 às 13:00 horas",
+  "bairro": "Jardim Capivari",
+  "vinculo": "Distrito de Saúde Sudoeste"
+},
+{
+"nome": "Centro de Saúde Igor Carlos Del Guercio",
+"endereco": "Avenida Antônio Pavim, 1.065 - Vila 31 de Março (esquina com Rua Carlos Grimaldi s/nº - em frente ao Bosque da Paz)",
+"fone": "(19) 3207-0074 / 3207-0921",
+"email": "saude.cs31marco@campinas.sp.gov.br",
+"horarioFuncionamento": "Segunda a Sexta-feira, das 07:00 às 17:00 horas",
+"bairro": "Jardim Conceição (Sousas)",
+"vinculo": "Distrito de Saúde Leste"
+},
+{
+  "nome": "Centro de Saúde Dr. João Gumercindo Guimarães",
+  "endereco": "Rua Nelson Ferreira de Souza, 292 - Jardim Florence II - CEP 13059-001 - Campinas - SP",
+  "fone": "(19) 3261-2462 / 3261-5858 / 3221-4747 (Farmácia) / 3221-0155 (especialidades)",
+  "email": "saude.csjdflorence@campinas.sp.gov.br",
+  "horarioFuncionamento": "Segunda à Sexta-feira das 07:00 às 22:00 horas ; Sábados das 07:00 às 19:00 horas",
+  "bairro": "Jardim Florence",
+  "vinculo": "Distrito de Saúde Noroeste"
 },
