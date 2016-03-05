@@ -2,16 +2,21 @@
 
 // Load modules
 const express = require('express')
+const mongoose = require('mongoose')
 
 // App constants
 const port = process.env.PORT || 3000
+const database = process.env.DATABASE || 'mongodb://localhost:27017/SaudeCampinas'
+
+// Connect to the database
+mongoose.connect(database)
 
 // Initialise app
 var app = express()
 var router = express.Router()
 
 // Load routes
-router.use('/hello', require('./controllers/hello'))
+router.use('/regioes', require('./controllers/regioes'))
 
 // Register all routes under /api
 app.use('/api', router)
