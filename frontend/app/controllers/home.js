@@ -12,8 +12,9 @@ angular.module('HackathonApp')
 .controller('HomeCtrl', function (ListaRegioes, ListaUnidades) {
   var self = this
 
-  /* Carrega a lista de regiões */
-  self.regioes = ListaRegioes
+  /* Carrega as listas de regiões e especialidades */
+  self.regioes = Regioes.listarRegioes()
+  self.especialidades = Especialidades.listarEspecialidades()
 
   /* Carrega a lista de unidades */
   self.unidades = ListaUnidades

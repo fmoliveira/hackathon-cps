@@ -9,14 +9,19 @@ require('angular')
 angular.module('HackathonApp')
 
 /* Define o serviço para retornar a lista de regiões */
-.factory('ListaRegioes', function () {
-  var regioes = []
+.factory('Regioes', function () {
+  var service = {}
 
   /* Dados mock */
-  regioes.push({ id: 1, descricao: 'Norte' })
-  regioes.push({ id: 2, descricao: 'Sul' })
-  regioes.push({ id: 3, descricao: 'Leste' })
-  regioes.push({ id: 4, descricao: 'Oeste' })
+  service.listarRegioes = function () {
+    var model = [
+      { id: 1, descricao: 'Norte' },
+      { id: 2, descricao: 'Sul' },
+      { id: 3, descricao: 'Leste' },
+      { id: 4, descricao: 'Oeste' }
+    ]
+    return model
+  }
 
-  return regioes
+  return service
 })

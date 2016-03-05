@@ -15,11 +15,12 @@ var app = angular.module('HackathonApp', [
 /* Carrega os seviços para acesso a dados */
 require('./services/regioes')
 require('./services/unidades')
+require('./services/especialidades')
 
 /* Carrega os controllers */
 require('./controllers/home')
 
-},{"./controllers/home":2,"./services/regioes":3,"./services/unidades":4,"angular":8,"angular-route":6}],2:[function(require,module,exports){
+},{"./controllers/home":2,"./services/especialidades":3,"./services/regioes":4,"./services/unidades":5,"angular":9,"angular-route":7}],2:[function(require,module,exports){
 /* global angular */
 
 'use strict'
@@ -34,15 +35,46 @@ angular.module('HackathonApp')
 .controller('HomeCtrl', function (ListaRegioes, ListaUnidades) {
   var self = this
 
-  /* Carrega a lista de regiões */
-  self.regioes = ListaRegioes
+  /* Carrega as listas de regiões e especialidades */
+  self.regioes = Regioes.listarRegioes()
+  self.especialidades = Especialidades.listarEspecialidades()
 
   /* Carrega a lista de unidades */
   self.unidades = ListaUnidades
 
 })
 
-},{"angular":8}],3:[function(require,module,exports){
+},{"angular":9}],3:[function(require,module,exports){
+/* global angular */
+
+'use strict'
+
+/* Biblioteca do Angular */
+require('angular')
+
+/* Carrega o app Angular */
+angular.module('HackathonApp')
+
+/* Define o serviço para retornar a lista de especialidades médicas */
+.factory('Especialidades', function () {
+  var service = {}
+
+  /* Dados mock */
+  service.listarEspecialidades = function () {
+    var model = [
+      { id: 1, descricao: 'Clínico Geral' },
+      { id: 2, descricao: 'Pediatra' },
+      { id: 3, descricao: 'Psicólogo' },
+      { id: 4, descricao: 'Ortopedista' },
+      { id: 5, descricao: 'Odontologista' }
+    ]
+    return model
+  }
+
+  return service
+})
+
+},{"angular":9}],4:[function(require,module,exports){
 /* global angular */
 
 'use strict'
@@ -54,19 +86,24 @@ require('angular')
 angular.module('HackathonApp')
 
 /* Define o serviço para retornar a lista de regiões */
-.factory('ListaRegioes', function () {
-  var regioes = []
+.factory('Regioes', function () {
+  var service = {}
 
   /* Dados mock */
-  regioes.push({ id: 1, descricao: 'Norte' })
-  regioes.push({ id: 2, descricao: 'Sul' })
-  regioes.push({ id: 3, descricao: 'Leste' })
-  regioes.push({ id: 4, descricao: 'Oeste' })
+  service.listarRegioes = function () {
+    var model = [
+      { id: 1, descricao: 'Norte' },
+      { id: 2, descricao: 'Sul' },
+      { id: 3, descricao: 'Leste' },
+      { id: 4, descricao: 'Oeste' }
+    ]
+    return model
+  }
 
-  return regioes
+  return service
 })
 
-},{"angular":8}],4:[function(require,module,exports){
+},{"angular":9}],5:[function(require,module,exports){
 /* global angular */
 
 'use strict'
@@ -90,7 +127,7 @@ angular.module('HackathonApp')
   return unidades
 })
 
-},{"angular":8}],5:[function(require,module,exports){
+},{"angular":9}],6:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.0
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -1108,11 +1145,11 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 require('./angular-route');
 module.exports = 'ngRoute';
 
-},{"./angular-route":5}],7:[function(require,module,exports){
+},{"./angular-route":6}],8:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.0
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -31541,8 +31578,8 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":7}]},{},[1]);
+},{"./angular":8}]},{},[1]);
