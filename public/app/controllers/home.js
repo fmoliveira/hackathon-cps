@@ -27,5 +27,5 @@ angular.module('HackathonApp')
 
   var options = {responsive: true}
   var ctx = document.getElementById('myChart').getContext('2d')
-  var lineChart = new Chart(ctx).Line(Unidades.chartUnidade(), options)
+  new Chart(ctx).Line(Unidades.chartUnidade(), options)
 })
