@@ -27,9 +27,9 @@
 
     <div class="form-group">
         <label>Região: </label>
-        <select ng-model="vm.regiaoSelecionada" class="bootstrap-select btn btn-default">
+        <select ng-model="regiaoSelecionada" ng-change="vm.carregarUnidades(regiaoSelecionada)" class="bootstrap-select btn btn-default">
             <!-- Lista as regiões disponíveis -->
-            <option ng-repeat="i in vm.regioes" ng-bind="i.descricao" ng-value="i.id"></option>
+            <option ng-repeat="i in vm.regioes" ng-bind="i.descricao" ng-value="i.descricao"></option>
         </select>
     </div>
 
