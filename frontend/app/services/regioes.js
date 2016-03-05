@@ -12,15 +12,16 @@ angular.module('HackathonApp')
 .factory('Regioes', function () {
   var service = {}
 
+  var mock = [
+    { id: 1, descricao: 'Norte' },
+    { id: 2, descricao: 'Sul' },
+    { id: 3, descricao: 'Leste' },
+    { id: 4, descricao: 'Oeste' }
+  ]
+
   /* Dados mock */
   service.listarRegioes = function () {
-    var model = [
-      { id: 1, descricao: 'Norte' },
-      { id: 2, descricao: 'Sul' },
-      { id: 3, descricao: 'Leste' },
-      { id: 4, descricao: 'Oeste' }
-    ]
-    return model
+    return mock
   }
 
   return service

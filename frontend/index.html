@@ -21,11 +21,11 @@
 <!-- Inicialização do app -->
 <body ng-app="HackathonApp">
 
-<h1>Busca de Unidades de Atendimento</h1>
-
 <!-- Atribui o controller da página inicial -->
-<div ng-controller="HomeCtrl as vm">
-    <div>
+<div class="container" ng-controller="HomeCtrl as vm">
+    <h1>Busca de Unidades de Atendimento</h1>
+
+    <div class="form-group">
         <label>Região: </label>
         <select ng-model="vm.regiaoSelecionada" class="bootstrap-select btn btn-default">
             <!-- Lista as regiões disponíveis -->
