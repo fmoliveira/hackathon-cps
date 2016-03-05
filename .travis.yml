@@ -3,7 +3,6 @@ node_js:
 - '4.3'
 after_success:
 - npm run build
-- surge --project ./frontend/ --domain saudecampinas.surge.sh
 deploy:
   provider: heroku
   app: saudecampinas
