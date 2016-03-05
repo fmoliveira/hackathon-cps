@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 
 // App constants
 const port = process.env.PORT || 3000
-const database = process.env.DATABASE || 'mongodb://localhost:27017/SaudeCampinas'
+const database = process.env.DATABASE || 'mongodb://localhost:27017/saudecampinas'
 
 // Connect to the database
 mongoose.connect(database)
