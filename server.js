@@ -2,7 +2,6 @@
 
 // Load modules
 const express = require('express')
-const mongoose = require('mongoose')
 
 // App constants
 const port = process.env.PORT || 3000
