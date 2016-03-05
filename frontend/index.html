@@ -27,7 +27,7 @@
 
     <div class="form-group">
         <label>Região: </label>
-        <select ng-model="vm.regiaoSelecionada" class="bootstrap-select btn btn-default">
+        <select ng-model="regiaoSelecionada" ng-change="vm.carregarUnidades(regiaoSelecionada)" class="bootstrap-select btn btn-default">
             <!-- Lista as regiões disponíveis -->
             <option></option>
             <option ng-repeat="i in vm.regioes" ng-bind="i.descricao" ng-value="i.id"></option>
@@ -46,6 +46,16 @@
             </tr>
             </thead>
             <tbody>
+                <tr ng-if="!regiaoSelecionada">
+                    <td colspan="100" class="text-center">
+                        Selecione a região acima!
+                    </td>
+                </tr>
+                <tr ng-if="regiaoSelecionada && vm.unidades.length === 0">
+                    <td colspan="100" class="text-center">
+                        Nenhuma unidade encontrada!
+                    </td>
+                </tr>
                 <tr ng-repeat="i in vm.unidades">
                     <td scope="row"><input type="checkbox" aria-label="..."></td>
                     <td ng-bind="i.nome"></td>

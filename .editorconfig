@@ -1,0 +1,18 @@
+# O EditorConfig padroniza o estilo de código para todos
+# desenvolvedores, independente de seus estilos pessoais
+# http://EditorConfig.org
+
+# Configuração está na raiz do repositório
+root = true
+
+# Quebras de linha estilo Unix e uma linha em branco
+# no final de todos arquivos
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# Codificação UTF-8 e indentação com 2 espaços
+[*.{html,js}]
+charset = utf-8
+indent_style = space
+indent_size = 2

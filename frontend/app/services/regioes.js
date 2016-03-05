@@ -13,12 +13,10 @@ angular.module('HackathonApp')
   var service = {}
 
   var mock = [
-    { id: 1, descricao: 'Norte' },
-    { id: 2, descricao: 'Sul' },
-    { id: 3, descricao: 'Leste' },
-    { id: 4, descricao: 'Oeste' },
-    { id: 5, descricao: 'Sudoeste' },
-    { id: 4, descricao: 'Noroeste' }
+    { descricao: 'Norte' },
+    { descricao: 'Sul' },
+    { descricao: 'Leste' },
+    { descricao: 'Oeste' }
   ]
 
   /* Dados mock */
