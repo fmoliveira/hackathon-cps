@@ -29,7 +29,8 @@
         <label>Região: </label>
         <select ng-model="regiaoSelecionada" ng-change="vm.carregarUnidades(regiaoSelecionada)" class="bootstrap-select btn btn-default">
             <!-- Lista as regiões disponíveis -->
-            <option ng-repeat="i in vm.regioes" ng-bind="i.descricao" ng-value="i.descricao"></option>
+            <option></option>
+            <option ng-repeat="i in vm.regioes" ng-bind="i.descricao" ng-value="i.id"></option>
         </select>
     </div>
 
