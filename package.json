@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "browserify public/app/app.js > public/js/bundle.js",
-    "test": "standard",
+    "test": "npm run test:mocha; npm run test:lint",
+    "test:lint": "standard",
+    "test:mocha": "mocha test/*",
     "start": "node server.js",
     "watch": "watchify public/app/app.js -o public/js/bundle.js"
   },
@@ -34,6 +36,8 @@
   },
   "devDependencies": {
     "browserify": "^13.0.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^2.4.5",
     "standard": "^6.0.7",
     "watchify": "^3.7.0"
   },
