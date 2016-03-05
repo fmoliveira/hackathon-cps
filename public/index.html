@@ -27,69 +27,38 @@
   <header class="jumbotron jumbotron-cool">
     <div class="container">
       <h1>Portal Saúde Campinas</h1>
-      <h2>Busca de Unidades de Atendimento</h2>
+      <h2>Atendimentos por Região</h2>
     </div>
   </header>
 
   <!-- Atribui o controller da página inicial -->
   <div class="container" ng-controller="HomeCtrl as vm">
     <div class="form-group">
-      <label>Região: </label>
-      <select ng-model="regiaoSelecionada" ng-change="vm.carregarUnidades(regiaoSelecionada)" class="bootstrap-select btn btn-default">
-        <!-- Lista as regiões disponíveis -->
-        <option></option>
-        <option ng-repeat="i in vm.regioes" ng-bind="i.descricao" ng-value="i.id"></option>
-      </select>
+      <label class="col-lg-12">Região: </label>
+      <div class="divItemCheckbox col-lg-3" ng-repeat="i in vm.regioes">
+        <input type="checkbox" ng-model="i.selecionado" ng-change="vm.atualizarUnidade(vm.regioes)">{{i.descricao}}
+      </div>
     </div>
-
-    <div id="divTableUnidades" class="panel panel-default">
-      <div class="panel-heading tituloPainel">Unidades de Atendimento</div>
-      <table id="tableUnidades" class="table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Unidade</th>
-            <th>Melhor horário</th>
-            <th>Enredeço</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-if="!regiaoSelecionada">
-            <td colspan="100" class="text-center">
-              Selecione a região acima!
-            </td>
-          </tr>
-          <tr ng-if="regiaoSelecionada && vm.unidades.length === 0">
-            <td colspan="100" class="text-center">
-              Nenhuma unidade encontrada!
-            </td>
-          </tr>
-          <tr ng-repeat="i in vm.unidades">
-            <td scope="row"><input type="checkbox" aria-label="..."></td>
-            <td ng-bind="i.nome"></td>
-            <td ng-bind="i.melhorHorario"></td>
-            <td ng-bind="i.endereco"></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="form-group">
+      <label class="col-lg-12">Unidades: </label>
+      <div class="divItemCheckbox col-lg-3" ng-repeat="i in vm.unidades">
+        <input type="checkbox" ng-model="i.selecionado" ng-value="{{i.id}}" >{{i.nome}}
+      </div>
     </div>
+    <canvas id="myChart" width="400" height="400"></canvas>
 
-  <canvas id="myChart" width="400" height="400"></canvas>
+    <footer class="container">
+      <hr>
+      <p class="text-center">
+        Portal Saúde Campinas &copy; 2016 - Projeto desenvolvido na <a href="http://hackathon.ima.sp.gov.br/api-portal/">Hackathon Campinas</a>
+      </p>
+    </footer>
 
-  </div>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 
-  <footer class="container">
-    <hr>
-    <p class="text-center">
-      Portal Saúde Campinas &copy; 2016 - Projeto desenvolvido na <a href="http://hackathon.ima.sp.gov.br/api-portal/">Hackathon Campinas</a>
-    </p>
-  </footer>
-
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-
-  <!-- Bundle contendo o Angular e o app -->
-  <script src="../../js/bundle.js"></script>
-</body>
-</html>
+    <!-- Bundle contendo o Angular e o app -->
+    <script src="../../js/bundle.js"></script>
+  </body>
+  </html>

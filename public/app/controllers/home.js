@@ -6,6 +6,9 @@
 require('angular')
 var Chart = require('chart.js')
 
+/* Biblioteca de utilidades */
+var _ = require('lodash')
+
 /* Carrega o app Angular */
 angular.module('HackathonApp')
 
@@ -13,12 +16,27 @@ angular.module('HackathonApp')
 .controller('HomeCtrl', function (Regioes, Especialidades, Unidades) {
   var self = this
 
+  /* Inicializa a lista de unidades como vazia */
+  self.unidades = []
+
   /* Carrega as listas de regiões e especialidades */
   self.regioes = Regioes.listarRegioes()
   self.especialidades = Especialidades.listarEspecialidades()
 
-  /* Inicializa a lista de unidades como vazia */
-  self.unidades = []
+  self.atualizarUnidade = function(regioes){
+    self.unidades = []
+    console.log("Regioes: ", regioes);
+    var regioesSelecionadas = _.filter(regioes, function(n){
+      console.log("n: ", n);
+      return n.selecionado
+    })
+    console.log("Região Selecionada: ",regioesSelecionadas)
+    self.unidades.push()
+    // console.log("Região Selecionada: ",self.unidades)
+    // if(regioes.selecionado ){
+    //   self.unidades = Unidades.listarUnidades(regioes.descricao)
+    // }
+  }
 
   /* Carrega as unidades da região selecionada */
   self.carregarUnidades = function (regiao) {
