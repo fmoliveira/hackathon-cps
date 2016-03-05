@@ -2,4 +2,5 @@ language: node_js
 node_js:
   - "4.3"
 after_success:
+- npm run build
 - surge --project ./frontend/ --domain saudecampinas.surge.sh
