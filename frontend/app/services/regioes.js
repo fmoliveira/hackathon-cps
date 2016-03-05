@@ -16,7 +16,9 @@ angular.module('HackathonApp')
     { id: 1, descricao: 'Norte' },
     { id: 2, descricao: 'Sul' },
     { id: 3, descricao: 'Leste' },
-    { id: 4, descricao: 'Oeste' }
+    { id: 4, descricao: 'Oeste' },
+    { id: 5, descricao: 'Sudoeste' },
+    { id: 4, descricao: 'Noroeste' }
   ]
 
   /* Dados mock */

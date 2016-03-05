@@ -18,5 +18,4 @@ angular.module('HackathonApp')
 
   /* Carrega a lista de unidades */
   self.unidades = Unidades.listarUnidades()
-
 })
