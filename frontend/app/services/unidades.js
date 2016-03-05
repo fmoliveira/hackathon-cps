@@ -12,7 +12,7 @@ var _ = require('lodash')
 angular.module('HackathonApp')
 
 /* Define o serviço para retornar a lista de unidades */
-.factory('Unidades', function(){
+.factory('Unidades', function () {
   var service = {}
 
   /* Dados mock */
@@ -26,7 +26,7 @@ angular.module('HackathonApp')
   /* Consulta a lista de unidades */
   service.listarUnidades = function (regiao) {
     return _.filter(mock, function (i) {
-      return(!regiao || i.regiao === regiao)
+      return (!regiao || i.regiao === regiao)
     })
   }
 
