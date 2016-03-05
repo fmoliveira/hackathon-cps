@@ -9,7 +9,7 @@ require('angular')
 angular.module('HackathonApp')
 
 /* Define o controller da tela inicial */
-.controller('HomeCtrl', function (ListaRegioes, ListaUnidades) {
+.controller('HomeCtrl', function (Regioes, Especialidades, ListaUnidades) {
   var self = this
 
   /* Carrega as listas de regiões e especialidades */
