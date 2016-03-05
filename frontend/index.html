@@ -45,6 +45,16 @@
             </tr>
             </thead>
             <tbody>
+                <tr ng-if="!regiaoSelecionada">
+                    <td colspan="100" class="text-center">
+                        Selecione a região acima!
+                    </td>
+                </tr>
+                <tr ng-if="regiaoSelecionada && vm.unidades.length === 0">
+                    <td colspan="100" class="text-center">
+                        Nenhuma unidade encontrada!
+                    </td>
+                </tr>
                 <tr ng-repeat="i in vm.unidades">
                     <td scope="row"><input type="checkbox" aria-label="..."></td>
                     <td ng-bind="i.nome"></td>
