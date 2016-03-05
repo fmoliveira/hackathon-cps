@@ -1,5 +1,5 @@
 # Ignorar bundles
-frontend/js/bundle.js
+public/js/bundle.js
 
 # Created by https://www.gitignore.io/api/node
 
