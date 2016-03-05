@@ -3,6 +3,8 @@
 const restify = require('restify')
 const request = require('superagent')
 
+const port = process.env.PORT || 3000
+
 var server = restify.createServer()
 var client_id = process.env.CLIENT_ID
 
@@ -23,6 +25,6 @@ server.get('/lista-saude', function (req, res) {
     })
 })
 
-server.listen(3000, function() {
+server.listen(port, function() {
   console.log('%s listening at %s', server.name, server.url);
 })

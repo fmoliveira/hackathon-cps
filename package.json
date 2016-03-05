@@ -6,6 +6,7 @@
   "scripts": {
     "build": "browserify frontend/app/app.js > frontend/js/bundle.js",
     "test": "standard",
+    "server": "node backend/index.js",
     "watch": "watchify frontend/app/app.js -o frontend/js/bundle.js"
   },
   "repository": {
