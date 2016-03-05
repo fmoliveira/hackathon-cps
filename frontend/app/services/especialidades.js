@@ -9,15 +9,20 @@ require('angular')
 angular.module('HackathonApp')
 
 /* Define o serviço para retornar a lista de especialidades médicas */
-.factory('ListaEspecialidades', function () {
-  var model = []
+.factory('Especialidades', function () {
+  var service = {}
 
   /* Dados mock */
-  model.push({ id: 1, descricao: 'Clínico Geral' })
-  model.push({ id: 2, descricao: 'Pediatra' })
-  model.push({ id: 3, descricao: 'Psicólogo' })
-  model.push({ id: 4, descricao: 'Ortopedista' })
-  model.push({ id: 5, descricao: 'Odontologista' })
+  service.listarEspecialidades = function () {
+    var model = [
+      { id: 1, descricao: 'Clínico Geral' },
+      { id: 2, descricao: 'Pediatra' },
+      { id: 3, descricao: 'Psicólogo' },
+      { id: 4, descricao: 'Ortopedista' },
+      { id: 5, descricao: 'Odontologista' }
+    ]
+    return model
+  }
 
-  return model
+  return service
 })

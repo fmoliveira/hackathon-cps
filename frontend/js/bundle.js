@@ -31,12 +31,12 @@ require('angular')
 angular.module('HackathonApp')
 
 /* Define o controller da tela inicial */
-.controller('HomeCtrl', function (Regioes, ListaEspecialidades) {
+.controller('HomeCtrl', function (Regioes, Especialidades) {
   var self = this
 
   /* Carrega as listas de regiões e especialidades */
   self.regioes = Regioes.listarRegioes()
-  self.especialidades = ListaEspecialidades
+  self.especialidades = Especialidades.listarEspecialidades()
 })
 
 },{"angular":8}],3:[function(require,module,exports){
@@ -51,17 +51,22 @@ require('angular')
 angular.module('HackathonApp')
 
 /* Define o serviço para retornar a lista de especialidades médicas */
-.factory('ListaEspecialidades', function () {
-  var model = []
+.factory('Especialidades', function () {
+  var service = {}
 
   /* Dados mock */
-  model.push({ id: 1, descricao: 'Clínico Geral' })
-  model.push({ id: 2, descricao: 'Pediatra' })
-  model.push({ id: 3, descricao: 'Psicólogo' })
-  model.push({ id: 4, descricao: 'Ortopedista' })
-  model.push({ id: 5, descricao: 'Odontologista' })
+  service.listarEspecialidades = function () {
+    var model = [
+      { id: 1, descricao: 'Clínico Geral' },
+      { id: 2, descricao: 'Pediatra' },
+      { id: 3, descricao: 'Psicólogo' },
+      { id: 4, descricao: 'Ortopedista' },
+      { id: 5, descricao: 'Odontologista' }
+    ]
+    return model
+  }
 
-  return model
+  return service
 })
 
 },{"angular":8}],4:[function(require,module,exports){
