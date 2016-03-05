@@ -15,6 +15,8 @@
   <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
 
+  <link rel="stylesheet" href="css/main.css">
+
   <link rel="shortcut icon" href="http://hackathon.ima.sp.gov.br/api-portal/sites/default/files/icon-novo.ico"
   type="image/vnd.microsoft.icon">
 
@@ -22,10 +24,15 @@
 </head>
 <body ng-app="HackathonApp">
 
+  <div class="jumbotron jumbotron-cool">
+    <div class="container">
+      <h1>Portal Saúde Campinas</h1>
+      <h2>Busca de Unidades de Atendimento</h2>
+    </div>
+  </div>
+
   <!-- Atribui o controller da página inicial -->
   <div class="container" ng-controller="HomeCtrl as vm">
-    <h1>Busca de Unidades de Atendimento</h1>
-
     <div class="form-group">
       <label>Região: </label>
       <select ng-model="regiaoSelecionada" ng-change="vm.carregarUnidades(regiaoSelecionada)" class="bootstrap-select btn btn-default">
