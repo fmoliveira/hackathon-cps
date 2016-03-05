@@ -20,11 +20,13 @@ server.get('/lista-saude', function (req, res) {
   request
     .get(makeUrl('/saude?offset=0&limit=100'))
     .set({ 'client_id': client_id })
-    .end(function(err, data) {
+    .end(function (err, data) {
+      if (err) throw err
+
       res.send(data)
     })
 })
 
-server.listen(port, function() {
-  console.log('%s listening at %s', server.name, server.url);
+server.listen(port, function () {
+  console.log('%s listening at %s', server.name, server.url)
 })
