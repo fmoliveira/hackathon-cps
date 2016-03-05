@@ -23,5 +23,4 @@ angular.module('HackathonApp')
   self.carregarUnidades = function (regiao) {
     self.unidades = Unidades.listarUnidades(regiao)
   }
-
 })

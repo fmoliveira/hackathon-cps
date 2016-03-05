@@ -1,7 +1,7 @@
 {
   "name": "hackathon-cps",
   "version": "1.0.0",
-  "description": "Projeto implementado na Hackathon Campinas.",
+  "description": "Projeto desenvolvido na Hackathon Campinas.",
   "main": "index.js",
   "scripts": {
     "build": "browserify frontend/app/app.js > frontend/js/bundle.js",
@@ -32,6 +32,7 @@
   "devDependencies": {
     "browserify": "^13.0.0",
     "standard": "^6.0.7",
+    "surge": "^0.17.7",
     "watchify": "^3.7.0"
   }
 }

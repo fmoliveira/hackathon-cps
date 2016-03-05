@@ -26,7 +26,7 @@ angular.module('HackathonApp')
   /* Consulta a lista de unidades */
   service.listarUnidades = function (regiao) {
     return _.filter(mock, function (i) {
-      return (!regiao || i.regiao === regiao)
+      return (i.regiao === regiao)
     })
   }
 
