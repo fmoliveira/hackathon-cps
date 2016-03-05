@@ -11,9 +11,9 @@ router.get('/', (req, res) => {
   Saude.distinct('distritoAtendimento').exec((err, data) => {
     if (err) res.send(err)
 
-      let regioes = _.map(data, function (i) {
-        return { descricao: i }
-      })
+    let regioes = _.map(data, function (i) {
+      return { descricao: i }
+    })
 
     res.json(regioes)
   })
