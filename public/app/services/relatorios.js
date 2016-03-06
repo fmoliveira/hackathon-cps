@@ -14,6 +14,7 @@ angular.module('HackathonApp')
 
   /* Consulta o relatório de atendimentos por região e especialidades */
   service.atendimentosRegiaoEspecialidades = function (regiao, especialidades) {
+    console.log(regiao, especialidades)
     return $http.get('/api/relatorios/regiao-especialidade?regiao=' + regiao + '&especialidades=' + especialidades)
   }
 

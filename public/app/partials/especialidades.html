@@ -6,5 +6,9 @@
 
 <h3>Selecione uma especialidade:</h3>
 <div class="list-group">
-  <a ng-repeat="i in vm.especialidades" href="/#/regioes/{{ vm.regiao }}/especialidades/{{ i.descricao }}/relatorio" class="list-group-item" ng-bind="i.descricao"></a>
+  <button ng-repeat="i in vm.especialidades" ng-click="i.selecionado = !i.selecionado" ng-class="{ 'active': i.selecionado }" class="list-group-item" ng-bind="i.descricao"></button>
+</div>
+
+<div class="text-right">
+  <a class="btn btn-primary" ng-click="vm.confirmar()">Confirmar</a>
 </div>

@@ -16,7 +16,7 @@ angular.module('HackathonApp')
   self.especialidade = $routeParams.especialidade
 
   var reg = { descricao: self.regiao }
-  var espec = [{ descricao: self.especialidade, selecionado: true }]
+  var espec = self.especialidade.split(',')
 
   var dataChart = Especialidades.chartEspecialidades(reg, espec)
   dataChart.then(function (n) {

@@ -4,6 +4,7 @@
 
 /* Biblioteca do Angular */
 require('angular')
+var _ = require('lodash')
 
 /* Carrega o app Angular */
 angular.module('HackathonApp')
@@ -20,14 +21,8 @@ angular.module('HackathonApp')
   service.chartEspecialidades = function (regiao, especialidades) {
     var data = []
     var labels = []
-    var espNomes = []
-    especialidades.forEach(function(esp){
-      if(esp.selecionado){
-        espNomes.push(esp.descricao)
-      }
-    })
-    let aRegEsp = Relatorios.atendimentosRegiaoEspecialidades(regiao.descricao, espNomes)
-    console.log("Ret: ", aRegEsp);
+    console.log(especialidades)
+    var aRegEsp = Relatorios.atendimentosRegiaoEspecialidades(regiao.descricao, _.join(especialidades, ','))
     return aRegEsp.then(function (n){
       n.data.forEach(function(i){
         labels.push(i._id.especialidade)

@@ -28,3 +28,7 @@ canvas {
 .divDate {
   margin-bottom: 5px;
 }
+
+.text-right {
+  text-align: right;
+}
