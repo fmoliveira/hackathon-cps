@@ -27,7 +27,9 @@ module.exports.get('/', (req, res) => {
 
 /* Consulta listagem de unidades de saúde por região */
 module.exports.get('/:regiao/unidades', (req, res) => {
-  Saude.distinct('localAtendimento', { distritoAtendimento: req.params.regiao })
+  let filtro = req.params.regiao.split(',')
+
+  Saude.distinct('localAtendimento', { distritoAtendimento: { $in: filtro } })
     .exec((err, data) => {
       if (err) res.send(err)
 

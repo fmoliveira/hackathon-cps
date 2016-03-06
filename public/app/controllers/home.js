@@ -13,8 +13,9 @@ var _ = require('lodash')
 angular.module('HackathonApp')
 
 /* Define o controller da tela inicial */
-.controller('HomeCtrl', function (Regioes, Especialidades, Unidades) {
+.controller('HomeCtrl', function ($rootScope, Regioes, Especialidades, Unidades) {
   var self = this
+  $rootScope.pageTitle = 'Atendimentos por Região'
 
   /* Inicializa as listas vazias */
   self.regioes = []
@@ -31,13 +32,24 @@ angular.module('HackathonApp')
   })
 
   self.atualizarUnidade = function () {
-    self.unidades = []
-    var regioesSelecionadas = _.filter(self.regioes, function (n) {
-      return n.selecionado
+    /* Filtra as regiões selecionadas */
+    var filtro = _.filter(self.regioes, function (i) {
+      return i.selecionado
     })
-    angular.forEach(regioesSelecionadas, function (value, key) {
-      self.unidades = _.concat(self.unidades, Unidades.listarUnidades(value.descricao))
+
+    /* Mapeia somente a descrição das regiões selecionadas */
+    filtro = _.map(filtro, function (i) {
+      return i.descricao
     })
+
+    /* Lista as unidades de todas as regiões selecionadas */
+    if (filtro.length !== 0) {
+      Unidades.listarUnidades(_.join(filtro, ',')).then(function (res) {
+        self.unidades = res.data
+      })
+    } else {
+      self.unidades = []
+    }
   }
 
   self.atualizarEspecialidade = function () {
