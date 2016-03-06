@@ -33,6 +33,11 @@ angular.module('HackathonApp', [
       controller: 'EspecialidadesCtrl',
       controllerAs: 'vm'
     })
+    .when('/regioes/:regiao/especialidades/:especialidade/relatorio', {
+      templateUrl: '/app/partials/relatorio.html',
+      controller: 'RelatorioCtrl',
+      controllerAs: 'vm'
+    })
     .otherwise({
       redirectTo: '/inicio'
     })
@@ -49,3 +54,4 @@ require('./controllers/home')
 require('./controllers/regioes')
 require('./controllers/unidades')
 require('./controllers/especialidades')
+require('./controllers/relatorio')
