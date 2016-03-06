@@ -17,6 +17,7 @@ var router = express.Router()
 /* Carrega as rotas da API do Saúde Campinas */
 router.use('/regioes', require('./controllers/regioes'))
 router.use('/especialidades', require('./controllers/especialidades'))
+router.use('/relatorios', require('./controllers/relatorios'))
 
 /* Registra as rotas na base /api */
 app.use('/api', router)
