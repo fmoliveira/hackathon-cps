@@ -1,0 +1,10 @@
+<ul class="breadcrumb">
+  <li><a href="/#/">Início</a></li>
+  <li><a href="/#/regioes/">Regiões</a></li>
+  <li class="active" ng-bind="vm.regiao"></li>
+</ul>
+
+<h3>Selecione uma especialidade:</h3>
+<div class="list-group">
+  <a ng-repeat="i in vm.especialidades" href="/#/regioes/{{ vm.regiao }}/especialidades/{{ i.descricao }}" class="list-group-item" ng-bind="i.descricao"></a>
+</div>
