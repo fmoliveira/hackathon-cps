@@ -11,7 +11,7 @@ module.exports = express.Router()
 
 /* Consulta a listagem de especialidades médicas */
 module.exports.get('/', (req, res) => {
-  Saude.distinct('ocupacaoProfissional')
+  Saude.distinct('descricaoAtividadeProfissional')
     .exec((err, data) => {
       if (err) res.send(err)
 
