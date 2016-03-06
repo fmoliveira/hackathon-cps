@@ -37,6 +37,7 @@ angular.module('HackathonApp', [
 require('./services/regioes')
 require('./services/unidades')
 require('./services/especialidades')
+require('./services/relatorios')
 
 /* Carrega os controllers */
 require('./controllers/home')
