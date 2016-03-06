@@ -31,12 +31,24 @@ angular.module('HackathonApp')
   })
 
   self.atualizarUnidade = function () {
-    self.unidades = []
-    var regioesSelecionadas = _.filter(self.regioes, function (n) {
-      return n.selecionado
+    /* Filtra as regiões selecionadas */
+    var filtro = _.filter(self.regioes, function (i) {
+      return i.selecionado
     })
-    angular.forEach(regioesSelecionadas, function (value, key) {
-      self.unidades = _.concat(self.unidades, Unidades.listarUnidades(value.descricao))
+
+    /* Mapeia somente a descrição das regiões selecionadas */
+    filtro = _.map(filtro, function (i) {
+      return i.descricao
+    })
+
+    /* Lista as regiões selecionadas separadas por vírgula */
+    filtro = _.join(filtro, ',')
+
+    console.log(filtro)
+
+    /* Lista as unidades de todas as regiões selecionadas */
+    Unidades.listarUnidades(filtro).then(function (res) {
+      self.unidades = res.data
     })
   }
 
