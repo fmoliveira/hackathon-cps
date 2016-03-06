@@ -27,9 +27,11 @@
   <header class="jumbotron jumbotron-cool">
     <div class="container">
       <h1>Portal Saúde Campinas</h1>
-      <h2>Atendimentos por Região</h2>
+      <h2 ng-bind="$root.pageTitle"></h2>
     </div>
   </header>
+
+  <div class="container" ng-view></div>
 
   <!-- Atribui o controller da página inicial -->
   <div class="container" ng-controller="HomeCtrl as vm">

@@ -13,8 +13,9 @@ var _ = require('lodash')
 angular.module('HackathonApp')
 
 /* Define o controller da tela inicial */
-.controller('HomeCtrl', function (Regioes, Especialidades, Unidades) {
+.controller('HomeCtrl', function ($rootScope, Regioes, Especialidades, Unidades) {
   var self = this
+  $rootScope.pageTitle = 'Atendimentos por Região'
 
   /* Inicializa as listas vazias */
   self.regioes = []
