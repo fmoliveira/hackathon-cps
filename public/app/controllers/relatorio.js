@@ -4,18 +4,24 @@
 
 /* Biblioteca do Angular */
 require('angular')
+var Chart = require('chart.js')
 
 /* Carrega o app Angular */
 angular.module('HackathonApp')
 
 /* Definição do controller */
-.controller('RelatorioCtrl', function (Relatorios, $routeParams) {
+.controller('RelatorioCtrl', function (Especialidades, $routeParams) {
   var self = this
   self.regiao = $routeParams.regiao
   self.especialidade = $routeParams.especialidade
-  self.dados = []
 
-  Relatorios.atendimentosRegiaoEspecialidades().then(function (res) {
-    self.dados = res.data
+  var reg = { descricao: self.regiao }
+  var espec = [{ descricao: self.especialidade, selecionado: true }]
+
+  var dataChart = Especialidades.chartEspecialidades(reg, espec)
+  dataChart.then(function (n) {
+    var options = { responsive: true }
+    var ctx = document.getElementById('myChart').getContext('2d')
+    new Chart(ctx).Bar(n, options)
   })
 })
