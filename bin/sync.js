@@ -2,6 +2,7 @@
 
 // Load modules
 const mongoose = require('mongoose')
+const _ = require('lodash')
 
 // Connect to the database
 const database = process.env.DATABASE || 'mongodb://localhost:27017/saudecampinas'
@@ -15,23 +16,37 @@ var Saude = require('../models/saude')
 var sincronizarSaude = function () {
   /* Consulta a listagem */
   api.listarAtendimentos().then((data) => {
-    for (var i of data) {
-      /* Grava cada um dos itens em nosso banco de dados,
-       * caso o mesmo ID ainda não exista */
-      Saude.update(
-        { _id: i.id },
-        { $setOnInsert: i },
-        { upsert: true }
-      ).then((res) => {
-        if (res.ok !== 1) throw new Error('Erro ao sincronizar os dados de saúde!')
+    let checagem = _.map(data, (i) => i.id)
+
+    /* Verifica os itens que já existem */
+    Saude.find({ _id: { $in: checagem } }).exec((err, res) => {
+      if (err) throw err
+
+      /* Mapeia somente os IDs dos existentes */
+      let existentes = _.map(res, (i) => i._id)
+
+      /* Remove da lista os que já existem no banco de dados */
+      _.remove(data, (i) => {
+        return _.indexOf(existentes, i._id) !== -1
       })
-    }
+
+      /* Insere todos os itens de uma vez só */
+      let bulk = Saude.collection.initializeUnorderedBulkOp({ useLegacyOps: true })
+      _.forEach(data, (i) => bulk.insert(i))
+      bulk.execute((err, res) => {
+        if (err) throw err
+
+        console.log(res)
+
+        Saude.count().exec((err, count) => {
+          if (err) throw err
+          console.log(count)
+        })
+      })
+    })
   })
 
-  Saude.count().exec((err, count) => {
-    if (err) throw err
-    console.log(count)
-  })
+  // setTimeout(sincronizarSaude, 500)
 }
 
 sincronizarSaude()
