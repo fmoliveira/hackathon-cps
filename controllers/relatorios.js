@@ -1,7 +1,6 @@
 'use strict'
 
 const express = require('express')
-const _ = require('lodash')
 
 /* Dados de saúde do banco de dados do Saúde Campinas */
 const Saude = require('../models/saude')
@@ -23,7 +22,7 @@ module.exports.get('/regiao-especialidade', (req, res) => {
 
   Saude.aggregate([
     { $match: filtro },
-    { $group: { _id: { regiao: "$distritoAtendimento", especialidade: "$descricaoAtividadeProfissional" }, qtdeAtendimentos: { $sum: 1 } } }
+    { $group: { _id: { regiao: '$distritoAtendimento', especialidade: '$descricaoAtividadeProfissional' }, qtdeAtendimentos: { $sum: 1 } } }
   ]).exec((err, data) => {
     if (err) res.send(err)
 
