@@ -13,9 +13,11 @@ var api = require('../lib/saude')
 var Saude = require('../models/saude')
 
 /* Realiza a sincronização com a API da prefeitura */
-var sincronizarSaude = function () {
+var sincronizarSaude = function (pagina) {
+  if (!pagina) pagina = 1
+
   /* Consulta a listagem */
-  api.listarAtendimentos().then((data) => {
+  api.listarAtendimentos(pagina).then((data) => {
     let checagem = _.map(data, (i) => i.id)
 
     /* Verifica os itens que já existem */
@@ -36,17 +38,19 @@ var sincronizarSaude = function () {
       bulk.execute((err, res) => {
         if (err) throw err
 
-        console.log(res)
-
         Saude.count().exec((err, count) => {
           if (err) throw err
           console.log(count)
         })
       })
     })
+
+    setTimeout(() => sincronizarSaude(pagina + 1), 500)
+  }, (err) => {
+    console.error(err)
+    setTimeout(() => sincronizarSaude(pagina), 10000)
   })
 
-  // setTimeout(sincronizarSaude, 500)
 }
 
 sincronizarSaude()

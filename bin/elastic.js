@@ -23,11 +23,12 @@ var sincronizarSaude = function (pagina) {
           if (err) throw err
         })
     })
+    pagina++
   }, (err) => {
     console.error(err)
   })
 
-  setTimeout(() => sincronizarSaude(pagina + 1), 10000)
+  setTimeout(() => sincronizarSaude(pagina), 10000)
 }
 
-sincronizarSaude()
+sincronizarSaude(33)
