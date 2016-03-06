@@ -13,7 +13,7 @@ angular.module('HackathonApp')
   var service = {}
 
   service.listarRegioes = function () {
-    return $http.get('/api/regioes');
+    return $http.get('/api/regioes')
   }
 
   return service

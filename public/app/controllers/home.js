@@ -27,9 +27,9 @@ angular.module('HackathonApp')
 
   self.especialidades = Especialidades.listarEspecialidades()
 
-  self.atualizarUnidade = function (regioes) {
+  self.atualizarUnidade = function () {
     self.unidades = []
-    var regioesSelecionadas = _.filter(regioes, function (n) {
+    var regioesSelecionadas = _.filter(self.regioes, function (n) {
       return n.selecionado
     })
     angular.forEach(regioesSelecionadas, function (value, key) {
@@ -37,12 +37,14 @@ angular.module('HackathonApp')
     })
   }
 
-  /* Carrega as unidades da região selecionada */
-  self.carregarUnidades = function (regiao) {
-    self.unidades = Unidades.listarUnidades(regiao)
+  self.atualizarEspecialidade = function () {
+    var especialidadesSelecionadas = _.filter(self.especialidades, function(i){
+      return i.selecionado
+    })
+    console.log("Unidades", especialidadesSelecionadas)
   }
 
   var options = {responsive: true}
   var ctx = document.getElementById('myChart').getContext('2d')
-  new Chart(ctx).Line(Unidades.chartUnidade(), options)
+  new Chart(ctx).Bar(Unidades.chartUnidade(), options)
 })

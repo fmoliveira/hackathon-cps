@@ -34,15 +34,21 @@
   <!-- Atribui o controller da página inicial -->
   <div class="container" ng-controller="HomeCtrl as vm">
     <div class="form-group">
+      <label class="col-lg-12">Especialidades: </label>
+      <div class="divItemCheckbox col-lg-3" ng-repeat="i in vm.especialidades">
+        <input type="checkbox" ng-model="i.selecionado" ng-change="vm.atualizarEspecialidade()">{{i.descricao}}
+      </div>
+    </div>
+    <div class="form-group">
       <label class="col-lg-12">Região: </label>
       <div class="divItemCheckbox col-lg-3" ng-repeat="i in vm.regioes">
-        <input type="checkbox" ng-model="i.selecionado" ng-change="vm.atualizarUnidade(vm.regioes)">{{i.descricao}}
+        <input type="checkbox" ng-model="i.selecionado" ng-change="vm.atualizarUnidade()">{{i.descricao}}
       </div>
     </div>
     <div class="form-group">
       <label class="col-lg-12">Unidades: </label>
       <div class="divItemCheckbox col-lg-3" ng-repeat="i in vm.unidades">
-        <input type="checkbox" ng-model="i.selecionado" ng-value="{{i.id}}" >{{i.nome}}
+        <input type="checkbox" id="{{i.id}}" ng-model="i.selecionado" ng-value="{{i.id}}" >{{i.nome}}
       </div>
     </div>
     <canvas id="myChart" width="400" height="400"></canvas>
