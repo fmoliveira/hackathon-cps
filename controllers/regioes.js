@@ -7,10 +7,10 @@ const _ = require('lodash')
 const Saude = require('../models/saude')
 
 /* Inicializa o roteamento */
-exports = express.Router()
+module.exports = express.Router()
 
 /* Consulta a listagem de regiões */
-exports.get('/', (req, res) => {
+module.exports.get('/', (req, res) => {
   Saude.distinct('distritoAtendimento')
     .exec((err, data) => {
       if (err) res.send(err)
@@ -26,7 +26,7 @@ exports.get('/', (req, res) => {
 })
 
 /* Consulta listagem de unidades de saúde por região */
-exports.get('/:regiao/unidades', (req, res) => {
+module.exports.get('/:regiao/unidades', (req, res) => {
   Saude.distinct('localAtendimento', { distritoAtendimento: req.params.regiao })
     .exec((err, data) => {
       if (err) res.send(err)

@@ -7,10 +7,10 @@ const _ = require('lodash')
 const Saude = require('../models/saude')
 
 /* Inicializa o roteamento */
-exports = express.Router()
+module.exports = express.Router()
 
 /* Consulta a listagem de especialidades médicas */
-exports.get('/', (req, res) => {
+module.exports.get('/', (req, res) => {
   Saude.distinct('ocupacaoProfissional')
     .exec((err, data) => {
       if (err) res.send(err)
