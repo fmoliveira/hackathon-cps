@@ -12,14 +12,17 @@ module.exports = express.Router()
 module.exports.get('/regiao-especialidade', (req, res) => {
   let filtro = {}
 
+  /* O filtro de região é opcional */
   if (req.query.regiao) {
     filtro.distritoAtendimento = req.query.regiao
   }
 
+  /* O filtro de especialidades é opcional e deve ser combinado em um array */
   if (req.query.especialidades) {
     filtro.descricaoAtividadeProfissional = { $in: req.query.especialidades.split(',') }
   }
 
+  /* Consultar dados agregados */
   Saude.aggregate([
     { $match: filtro },
     { $group: { _id: { regiao: '$distritoAtendimento', especialidade: '$descricaoAtividadeProfissional' }, qtdeAtendimentos: { $sum: 1 } } }
