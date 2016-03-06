@@ -18,6 +18,11 @@ angular.module('HackathonApp', [
       controller: 'HomeCtrl',
       controllerAs: 'vm'
     })
+    .when('/regioes', {
+      templateUrl: '/app/partials/regioes.html',
+      controller: 'RegiaoCtrl',
+      controllerAs: 'vm'
+    })
     .otherwise({
       redirectTo: '/inicio'
     })
@@ -30,5 +35,4 @@ require('./services/especialidades')
 
 /* Carrega os controllers */
 require('./controllers/home')
-
-/* Configura o roteador */
+require('./controllers/regiao')
