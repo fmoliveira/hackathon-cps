@@ -23,8 +23,8 @@ angular.module('HackathonApp')
     var labels = []
     console.log(especialidades)
     var aRegEsp = Relatorios.atendimentosRegiaoEspecialidades(regiao.descricao, _.join(especialidades, ','))
-    return aRegEsp.then(function (n){
-      n.data.forEach(function(i){
+    return aRegEsp.then(function (n) {
+      n.data.forEach(function (i) {
         labels.push(i._id.especialidade)
         data.push(i.qtdeAtendimentos)
       })
@@ -46,7 +46,6 @@ angular.module('HackathonApp')
 
       return dataChart
     })
-
   }
 
   return service

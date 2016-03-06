@@ -57,7 +57,7 @@ angular.module('HackathonApp')
       return i.selecionado
     })
     var dataChart = Especialidades.chartEspecialidades(self.regioes[0], especialidadesSelecionadas)
-    dataChart.then(function(n){
+    dataChart.then(function (n) {
       console.log('chartEspecialidades', n)
       var options = {responsive: true}
       var ctx = document.getElementById('myChart').getContext('2d')
