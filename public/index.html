@@ -33,24 +33,73 @@
 
   <!-- Atribui o controller da página inicial -->
   <div class="container" ng-controller="HomeCtrl as vm">
-    <div class="form-group">
-      <label class="col-lg-12">Especialidades: </label>
-      <div class="divItemCheckbox col-lg-3" ng-repeat="i in vm.especialidades">
-        <input type="checkbox" ng-model="i.selecionado" ng-change="vm.atualizarEspecialidade()">{{i.descricao}}
+
+    <div class="row divDate">
+      <div class="col-lg-1">
+        <label>Mês</label>
+        <div>
+          <select class="btn btn-default" ng-model="vm.mes" ng-change="vm.date()">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-lg-1">
+        <label>Ano</label>
+        <div>
+          <select class="btn btn-default" ng-model="vm.ano" ng-change="vm.atualizarData()">
+            <option value="2015">2015</option>
+            <option value="2014">2014</option>
+            <option value="2013">2013</option>
+            <option value="2012">2012</option>
+          </select>
+        </div>
       </div>
     </div>
+
     <div class="form-group">
-      <label class="col-lg-12">Região: </label>
-      <div class="divItemCheckbox col-lg-3" ng-repeat="i in vm.regioes">
-        <input type="checkbox" ng-model="i.selecionado" ng-change="vm.atualizarUnidade()">{{i.descricao}}
+      <div class="panel panel-default">
+        <div class="panel-heading">Especialidades</div>
+        <div class="panel-body">
+          <div class="col-lg-2" ng-repeat="i in vm.especialidades">
+            <input type="checkbox" ng-model="i.selecionado" ng-change="vm.atualizarEspecialidade()">{{i.descricao}}
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="form-group">
-      <label class="col-lg-12">Unidades: </label>
-      <div class="divItemCheckbox col-lg-3" ng-repeat="i in vm.unidades">
-        <input type="checkbox" id="{{i.id}}" ng-model="i.selecionado" ng-value="{{i.id}}" >{{i.nome}}
+      <div class="panel panel-default">
+        <div class="panel-heading">Regiões</div>
+        <div class="panel-body">
+          <div class="col-lg-2" ng-repeat="i in vm.regioes">
+            <input type="checkbox" ng-model="i.selecionado" ng-change="vm.atualizarUnidade()">{{i.descricao}}
+          </div>
+        </div>
       </div>
     </div>
+
+    <div class="form-group">
+      <div class="panel panel-default">
+        <div class="panel-heading">Unidades</div>
+        <div class="panel-body">
+          <div class="col-lg-3" ng-repeat="i in vm.unidades">
+            <input type="checkbox" ng-model="i.selecionado">{{i.descricao}}
+          </div>
+        </div>
+      </div>
+    </div>
+
     <canvas id="myChart" width="400" height="400"></canvas>
 
     <footer class="container">

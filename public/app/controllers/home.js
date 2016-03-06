@@ -44,6 +44,15 @@ angular.module('HackathonApp')
     console.log('Unidades', especialidadesSelecionadas)
   }
 
+  self.mes
+  self.ano
+  self.dataSelecionada
+
+  self.atualizarData = function(){
+    self.dataSelecionada = new Date(self.ano, self.mes)
+    console.log("Data: ", self.dataSelecionada)
+  }
+
   var options = {responsive: true}
   var ctx = document.getElementById('myChart').getContext('2d')
   new Chart(ctx).Bar(Unidades.chartUnidade(), options)
