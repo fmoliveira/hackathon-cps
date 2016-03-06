@@ -20,7 +20,12 @@ angular.module('HackathonApp', [
     })
     .when('/regioes', {
       templateUrl: '/app/partials/regioes.html',
-      controller: 'RegiaoCtrl',
+      controller: 'RegioesCtrl',
+      controllerAs: 'vm'
+    })
+    .when('/regioes/:regiao/unidades', {
+      templateUrl: '/app/partials/unidades.html',
+      controller: 'UnidadesCtrl',
       controllerAs: 'vm'
     })
     .otherwise({
@@ -35,4 +40,4 @@ require('./services/especialidades')
 
 /* Carrega os controllers */
 require('./controllers/home')
-require('./controllers/regiao')
+require('./controllers/regioes')

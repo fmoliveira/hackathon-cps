@@ -9,7 +9,7 @@ require('angular')
 angular.module('HackathonApp')
 
 /* Definição do controller */
-.controller('RegiaoCtrl', function (Regioes) {
+.controller('RegioesCtrl', function (Regioes) {
   var self = this
   self.regioes = []
 
