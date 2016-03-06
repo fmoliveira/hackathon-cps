@@ -25,8 +25,7 @@ module.exports.get('/regiao-especialidade', (req, res) => {
   /* Consultar dados agregados */
   Saude.aggregate([
     { $match: filtro },
-    { $group: { _id: { regiao: '$distritoAtendimento', especialidade: '$descricaoAtividadeProfissional' }, qtdeAtendimentos: { $sum: 1 } } },
-    { $match: { qtdeAtendimentos: { $gt: 0 } } }
+    { $group: { _id: { regiao: '$distritoAtendimento', especialidade: '$descricaoAtividadeProfissional' }, qtdeAtendimentos: { $sum: 1 } } }
   ]).exec((err, data) => {
     if (err) res.send(err)
 
