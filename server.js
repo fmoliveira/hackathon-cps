@@ -17,6 +17,7 @@ var router = express.Router()
 
 // Load routes
 router.use('/regioes', require('./controllers/regioes'))
+router.use('/especialidades', require('./controllers/especialidades'))
 
 // Register all routes under /api
 app.use('/api', router)
