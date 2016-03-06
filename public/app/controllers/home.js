@@ -56,7 +56,13 @@ angular.module('HackathonApp')
     var especialidadesSelecionadas = _.filter(self.especialidades, function (i) {
       return i.selecionado
     })
-    console.log('Unidades', especialidadesSelecionadas)
+    var dataChart = Especialidades.chartEspecialidades(self.regioes[0], especialidadesSelecionadas)
+    dataChart.then(function(n){
+      console.log('chartEspecialidades', n)
+      var options = {responsive: true}
+      var ctx = document.getElementById('myChart').getContext('2d')
+      new Chart(ctx).Bar(n, options)
+    })
   }
 
   self.mes
@@ -68,7 +74,7 @@ angular.module('HackathonApp')
     console.log('Data:', self.dataSelecionada)
   }
 
-  var options = {responsive: true}
-  var ctx = document.getElementById('myChart').getContext('2d')
-  new Chart(ctx).Bar(Unidades.chartUnidade(), options)
+  // var options = {responsive: true}
+  // var ctx = document.getElementById('myChart').getContext('2d')
+  // new Chart(ctx).Bar(Especialidades.chartEspecialidades(), options)
 })
