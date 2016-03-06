@@ -41,3 +41,4 @@ require('./services/especialidades')
 /* Carrega os controllers */
 require('./controllers/home')
 require('./controllers/regioes')
+require('./controllers/unidades')

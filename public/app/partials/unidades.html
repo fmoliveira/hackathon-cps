@@ -1,0 +1,4 @@
+<h3>Selecione uma unidade:</h3>
+<div class="list-group">
+  <a ng-repeat="i in vm.unidades" href="/#/unidades/{{ vm.regiao }}/unidades/{{ i.descricao }}" class="list-group-item" ng-bind="i.descricao"></a>
+</div>
