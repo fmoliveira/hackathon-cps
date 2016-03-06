@@ -63,9 +63,9 @@ angular.module('HackathonApp')
   self.ano
   self.dataSelecionada
 
-  self.atualizarData = function(){
+  self.atualizarData = function () {
     self.dataSelecionada = new Date(self.ano, self.mes)
-    console.log("Data: ", self.dataSelecionada)
+    console.log('Data:', self.dataSelecionada)
   }
 
   var options = {responsive: true}

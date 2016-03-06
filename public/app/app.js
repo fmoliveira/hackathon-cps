@@ -14,7 +14,7 @@ angular.module('HackathonApp', [
 .config(function ($routeProvider) {
   $routeProvider
     .when('/inicio', {
-      templateUrl:'/app/partials/home.html',
+      templateUrl: '/app/partials/home.html',
       controller: 'HomeCtrl',
       controllerAs: 'vm'
     })
