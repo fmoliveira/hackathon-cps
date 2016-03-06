@@ -23,6 +23,8 @@ var sincronizarSaude = function (pagina) {
           if (err) throw err
         })
     })
+  }, (err) => {
+    console.error(err)
   })
 
   setTimeout(() => sincronizarSaude(pagina + 1), 10000)
