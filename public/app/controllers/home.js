@@ -38,10 +38,10 @@ angular.module('HackathonApp')
   }
 
   self.atualizarEspecialidade = function () {
-    var especialidadesSelecionadas = _.filter(self.especialidades, function(i){
+    var especialidadesSelecionadas = _.filter(self.especialidades, function (i) {
       return i.selecionado
     })
-    console.log("Unidades", especialidadesSelecionadas)
+    console.log('Unidades', especialidadesSelecionadas)
   }
 
   var options = {responsive: true}

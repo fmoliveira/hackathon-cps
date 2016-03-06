@@ -50,7 +50,6 @@ var sincronizarSaude = function (pagina) {
     console.error(err)
     setTimeout(() => sincronizarSaude(pagina), 10000)
   })
-
 }
 
 sincronizarSaude()

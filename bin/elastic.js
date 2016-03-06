@@ -1,7 +1,6 @@
 'use strict'
 
 // Load modules
-const insert = require('./insert')
 const request = require('superagent')
 
 // API de Saúde
