@@ -41,15 +41,14 @@ angular.module('HackathonApp')
       return i.descricao
     })
 
-    /* Lista as regiões selecionadas separadas por vírgula */
-    filtro = _.join(filtro, ',')
-
-    console.log(filtro)
-
     /* Lista as unidades de todas as regiões selecionadas */
-    Unidades.listarUnidades(filtro).then(function (res) {
-      self.unidades = res.data
-    })
+    if (filtro.length !== 0) {
+      Unidades.listarUnidades(_.join(filtro, ',')).then(function (res) {
+        self.unidades = res.data
+      })
+    } else {
+      self.unidades = []
+    }
   }
 
   self.atualizarEspecialidade = function () {
