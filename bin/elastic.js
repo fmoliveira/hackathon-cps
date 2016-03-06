@@ -8,9 +8,13 @@ const request = require('superagent')
 var api = require('../lib/saude')
 
 /* Realiza a sincronização com a API da prefeitura */
-var sincronizarSaude = function () {
+var sincronizarSaude = function (pagina) {
+  if (!pagina) pagina = 1
+
+  console.log('Sincronizar', pagina)
+
   /* Consulta a listagem */
-  api.listarAtendimentos().then((data) => {
+  api.listarAtendimentos(pagina).then((data) => {
     data.forEach((i) => {
       request
         .post('http://elastic.fmoliveira.com.br/saude/atendimentos/' + i.id)
@@ -21,7 +25,7 @@ var sincronizarSaude = function () {
     })
   })
 
-  // setTimeout(sincronizarSaude, 500)
+  setTimeout(() => sincronizarSaude(pagina + 1), 10000)
 }
 
 sincronizarSaude()
