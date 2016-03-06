@@ -9,7 +9,7 @@ const database = process.env.DATABASE || 'mongodb://localhost:27017/saudecampina
 mongoose.connect(database)
 
 //
-var api = require('../lib/saude')
+var integracao = require('../lib/integracao')
 var Saude = require('../models/saude')
 
 /* Realiza a sincronização com a API da prefeitura */
@@ -17,7 +17,7 @@ var sincronizarSaude = function (pagina) {
   if (!pagina) pagina = 1
 
   /* Consulta a listagem */
-  api.listarAtendimentos(pagina).then((data) => {
+  integracao.listarAtendimentos(pagina).then((data) => {
     let checagem = _.map(data, (i) => i.id)
 
     /* Verifica os itens que já existem */

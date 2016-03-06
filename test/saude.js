@@ -3,13 +3,13 @@
 /* global describe, it */
 
 const expect = require('expect.js')
-const saude = require('../lib/saude')
+const integracao = require('../lib/integracao')
 
 'use strict'
 
 describe('API de Saúde', function () {
   it('Deve retornar um array de atendimentos', function (done) {
-    saude.listarAtendimentos().then((data) => {
+    integracao.listarAtendimentos().then((data) => {
       expect(data).to.be.ok()
       expect(data).to.be.an('array')
       done()
@@ -19,7 +19,7 @@ describe('API de Saúde', function () {
   it('Deve retornar a quantidade solicitada de atendimentos', function (done) {
     const qtde = 15
 
-    saude.listarAtendimentos(0, qtde).then((data) => {
+    integracao.listarAtendimentos(0, qtde).then((data) => {
       expect(data).to.be.ok()
       expect(data).to.be.an('array')
       expect(data.length).to.be(qtde)
@@ -28,7 +28,7 @@ describe('API de Saúde', function () {
   })
 
   it('Deve ter um atendimento formatado conforme a documentação', function (done) {
-    saude.listarAtendimentos().then((data) => {
+    integracao.listarAtendimentos().then((data) => {
       let item = data[0]
 
       expect(item).to.be.ok()

@@ -5,9 +5,9 @@ const _ = require('lodash')
 
 const Saude = require('../models/saude')
 
-var router = express.Router()
+exports = express.Router()
 
-router.get('/', (req, res) => {
+exports.get('/', (req, res) => {
   Saude.distinct('ocupacaoProfissional')
     .exec((err, data) => {
       if (err) res.send(err)
@@ -19,5 +19,3 @@ router.get('/', (req, res) => {
       res.json(especialidades)
     })
 })
-
-module.exports = router
