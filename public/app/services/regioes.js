@@ -12,6 +12,7 @@ angular.module('HackathonApp')
 .factory('Regioes', function ($http) {
   var service = {}
 
+  /* Consulta a lista de regiões */
   service.listarRegioes = function () {
     return $http.get('/api/regioes')
   }
