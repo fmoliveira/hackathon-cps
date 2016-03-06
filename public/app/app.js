@@ -13,11 +13,6 @@ angular.module('HackathonApp', [
 
 .config(function ($routeProvider) {
   $routeProvider
-    .when('/inicio', {
-      templateUrl: '/app/partials/home.html',
-      controller: 'HomeCtrl',
-      controllerAs: 'vm'
-    })
     .when('/regioes', {
       templateUrl: '/app/partials/regioes.html',
       controller: 'RegioesCtrl',
@@ -39,7 +34,7 @@ angular.module('HackathonApp', [
       controllerAs: 'vm'
     })
     .otherwise({
-      redirectTo: '/inicio'
+      redirectTo: '/regioes'
     })
 })
 
