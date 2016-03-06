@@ -16,16 +16,19 @@ angular.module('HackathonApp')
 .controller('HomeCtrl', function (Regioes, Especialidades, Unidades) {
   var self = this
 
-  /* Inicializa a lista de unidades como vazia */
-  self.unidades = []
+  /* Inicializa as listas vazias */
   self.regioes = []
+  self.unidades = []
+  self.especialidades = []
 
   /* Carrega as listas de regiões e especialidades */
   Regioes.listarRegioes().then(function (res) {
     self.regioes = res.data
   })
 
-  self.especialidades = Especialidades.listarEspecialidades()
+  Especialidades.listarEspecialidades().then(function (res) {
+    self.especialidades = res.data
+  })
 
   self.atualizarUnidade = function () {
     self.unidades = []

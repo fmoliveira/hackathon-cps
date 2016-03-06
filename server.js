@@ -1,30 +1,29 @@
 'use strict'
 
-// Load modules
 const express = require('express')
 const mongoose = require('mongoose')
 
-// App constants
+/* Constantes da aplicação */
 const port = process.env.PORT || 3000
 const database = process.env.DATABASE || 'mongodb://localhost:27017/saudecampinas'
 
-// Connect to the database
+/* Estabelece conexão com o banco de dados */
 mongoose.connect(database)
 
-// Initialise app
+/* Inicializa o servidor */
 var app = express()
 var router = express.Router()
 
-// Load routes
+/* Carrega as rotas da API do Saúde Campinas */
 router.use('/regioes', require('./controllers/regioes'))
 router.use('/especialidades', require('./controllers/especialidades'))
 
-// Register all routes under /api
+/* Registra as rotas na base /api */
 app.use('/api', router)
 
-// Serving Angular app as static content
+/* Servindo conteúdo estático */
 app.use(express.static(`${__dirname}/public`))
 
-// Start the server
+/* Abre o servidor */
 app.listen(port)
 console.log('Server listening on port ' + port)

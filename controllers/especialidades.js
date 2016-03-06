@@ -3,21 +3,24 @@
 const express = require('express')
 const _ = require('lodash')
 
+/* Dados de saúde do banco de dados do Saúde Campinas */
 const Saude = require('../models/saude')
 
-var router = express.Router()
+/* Inicializa o roteamento */
+exports = express.Router()
 
-router.get('/', (req, res) => {
+/* Consulta a listagem de especialidades médicas */
+exports.get('/', (req, res) => {
   Saude.distinct('ocupacaoProfissional')
     .exec((err, data) => {
       if (err) res.send(err)
 
+      /* Mapeia os dados para permitir escalabilidade */
       let especialidades = _.map(data, function (i) {
         return { descricao: i }
       })
 
+      /* Retorna lista de especialidades */
       res.json(especialidades)
     })
 })
-
-module.exports = router

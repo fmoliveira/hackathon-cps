@@ -2,6 +2,7 @@
 
 const mongoose = require('mongoose')
 
+/* Modelo para armazenar os dados da API da prefeitura */
 var SaudeSchema = new mongoose.Schema({
   _id: String,
   distritoVinculo: String,

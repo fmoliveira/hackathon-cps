@@ -9,20 +9,12 @@ require('angular')
 angular.module('HackathonApp')
 
 /* Define o serviço para retornar a lista de especialidades médicas */
-.factory('Especialidades', function () {
+.factory('Especialidades', function ($http) {
   var service = {}
 
-  var mock = [
-    { id: 1, descricao: 'Clínico Geral' },
-    { id: 2, descricao: 'Pediatra' },
-    { id: 3, descricao: 'Psicólogo' },
-    { id: 4, descricao: 'Ortopedista' },
-    { id: 5, descricao: 'Odontologista' }
-  ]
-
-  /* Dados mock */
+  /* Consulta a lista de especialidades */
   service.listarEspecialidades = function () {
-    return mock
+    return $http.get('/api/especialidades')
   }
 
   return service
