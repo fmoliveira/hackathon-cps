@@ -11,5 +11,5 @@ Projeto desenvolvido na Hackathon Campinas.
 * Filipe Oliveira ([@fmoliveira](https://github.com/fmoliveira))
 * Roberto Cândido ([@rcandido](https://github.com/rcandido))
 
-[travis-url]: https://travis-ci.org/fmoliveira/hackathon-cps
-[travis-image]: https://api.travis-ci.org/fmoliveira/hackathon-cps.svg
+[travis-url]: https://travis-ci.org/fmoliveira/saudecampinas
+[travis-image]: https://api.travis-ci.org/fmoliveira/saudecampinas.svg
